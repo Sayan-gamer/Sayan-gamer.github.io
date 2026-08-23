@@ -1,2 +1,2 @@
-# mypage.github.io
-This is my personal webpage
+# Sayan-Gamer.github.io
+This is the repo of my personal webpage
