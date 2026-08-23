@@ -13,7 +13,17 @@
   </style>
 </head>
 <body>
-  <h1>Hello, World! 👋</h1>
   <p>Welcome to my new personal website hosted on GitHub Pages.</p>
+  <p>It can also run as a message page.</p>
+  <h2>Current Message:</h2>
+  <h1 id="message-display">Waiting for a message...</h1>
+  
+  <hr>
+
+  <input type="text" id="message-input" placeholder="Type something new...">
+  <button id="update-btn">Update</button>
+
+  <!-- Load the main JavaScript file as a module -->
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
