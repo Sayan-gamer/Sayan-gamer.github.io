@@ -47,24 +47,21 @@
         /* --- Mobile Navbar Responsive CSS --- */
         @media (max-width: 900px) {
             nav {
-                flex-direction: column; /* Stacks Logo above Links */
+                flex-direction: column;
                 align-items: stretch;
                 gap: 1rem;
                 padding: 1rem;
             }
             .nav-links {
                 width: 100%;
-                overflow-x: auto; /* Enables horizontal scrolling */
-                flex-wrap: nowrap; /* Forces one line for all buttons */
-                -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                -webkit-overflow-scrolling: touch;
                 padding-bottom: 5px; 
-                /* Hide scrollbar for cleaner look */
                 -ms-overflow-style: none;  
                 scrollbar-width: none;  
             }
-            .nav-links::-webkit-scrollbar { 
-                display: none; 
-            }
+            .nav-links::-webkit-scrollbar { display: none; }
         }
 
         /* Global Section Titles */
@@ -80,7 +77,6 @@
         .slide-content h2 { font-size: 3rem; margin-bottom: 10px; font-weight: 700; text-transform: capitalize; }
         .slide-content p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
         
-        /* Slider Navigation Arrows */
         .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: white; border: none; font-size: 2rem; padding: 15px 20px; cursor: pointer; z-index: 10; transition: 0.3s; user-select: none; }
         .slider-arrow:hover { background: var(--primary); }
         .arrow-prev { left: 0; border-radius: 0 5px 5px 0; }
@@ -95,23 +91,27 @@
         .about-content p { font-size: 1.15rem; color: #555; margin-bottom: 1.5rem; }
         .about-content p:last-child { margin-bottom: 0; }
         
-        /* 3. Cost Cutting / Benefit Calculator (Side-by-Side) */
+        /* 3. Cost Cutting / Benefit Calculator */
         .calculator-section { padding: 4rem 5%; background: #e8f5e9; }
-        .calc-wrapper { display: flex; justify-content: center; align-items: stretch; gap: 3rem; max-width: 900px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
-        .calc-inputs { flex: 1; min-width: 300px; }
-        .calc-results { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 300px; }
+        .calc-wrapper { display: flex; justify-content: center; align-items: stretch; gap: 3rem; max-width: 1000px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
+        .calc-inputs { flex: 1; min-width: 320px; }
+        .calc-results { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 320px; }
         
-        .calc-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
-        .calc-row label { font-size: 1.1rem; font-weight: 600; color: #444; }
-        .calc-row input { width: 120px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; text-align: right; transition: 0.3s; }
+        .calc-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px dashed #eee; padding-bottom: 8px; }
+        .calc-row label { font-size: 1.05rem; font-weight: 600; color: #444; }
+        .calc-row input { width: 130px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; text-align: right; transition: 0.3s; }
         .calc-row input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 5px rgba(46,125,50,0.3); }
-        
+        .input-group-title { font-size: 1.2rem; color: var(--primary); margin-top: 15px; margin-bottom: 10px; border-bottom: 2px solid var(--primary-light); padding-bottom: 5px; }
+
         .calc-btn { width: 100%; padding: 14px; margin-top: 20px; background: var(--primary); color: white; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3); }
         .calc-btn:hover { background: var(--dark); transform: translateY(-2px); }
         
-        .total-box { padding: 40px 20px; background: var(--bg); border: 2px dashed var(--primary-light); border-radius: 12px; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
-        .total-box h3 { color: var(--dark); font-size: 1.5rem; margin-bottom: 15px; }
-        .total-amount { color: var(--primary); font-size: 3rem; font-weight: 800; display: block; }
+        .total-box { padding: 30px; background: var(--bg); border: 2px dashed var(--primary-light); border-radius: 12px; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+        .total-box h3 { color: var(--dark); font-size: 1.6rem; margin-bottom: 20px; text-align: center; }
+        
+        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e0e0e0; font-size: 1.1rem; }
+        .result-row:last-child { border-bottom: none; margin-top: 10px; font-size: 1.3rem; font-weight: bold; color: var(--primary); background: #e8f5e9; padding: 15px; border-radius: 8px; }
+        .result-row span.val { font-weight: bold; color: #333; }
         
         @media (max-width: 768px) {
             .calc-wrapper { flex-direction: column; gap: 2rem; }
@@ -155,7 +155,6 @@
             <a href="#contact">Contact Us</a>
             <a href="#login" class="login-btn">Login / Register</a>
             
-            <!-- Language Selector -->
             <div class="lang-selector">
                 <select id="language" onchange="changeLanguage()">
                     <option value="en">English</option>
@@ -233,13 +232,20 @@
         </div>
     </section>
 
-    <!-- 3. Cost Cutting / Cost Benefit Calculator (Left/Right Layout) -->
+    <!-- 3. Cost Cutting / Cost Benefit Calculator -->
     <section class="calculator-section" id="calculator">
         <h2 class="section-title">Cost Benefit Calculator</h2>
         <div class="calc-wrapper">
             
             <!-- Left Side: Input Values -->
             <div class="calc-inputs">
+                <div class="input-group-title">Farm Details</div>
+                <div class="calc-row">
+                    <label for="area">Farm Area (Acres)</label>
+                    <input type="number" id="area" placeholder="1" min="0.1" step="0.1" value="1" oninput="calculateExpenditure()">
+                </div>
+                
+                <div class="input-group-title">Expenditure</div>
                 <div class="calc-row">
                     <label for="seedling">Seedling Cost</label>
                     <input type="number" id="seedling" placeholder="0" min="0" oninput="calculateExpenditure()">
@@ -260,19 +266,49 @@
                     <label for="harvest">Harvesting Cost</label>
                     <input type="number" id="harvest" placeholder="0" min="0" oninput="calculateExpenditure()">
                 </div>
-                <div class="calc-row" style="border-bottom: none;">
+                <div class="calc-row">
                     <label for="manpower">Manpower Cost</label>
                     <input type="number" id="manpower" placeholder="0" min="0" oninput="calculateExpenditure()">
                 </div>
+
+                <div class="input-group-title">Income</div>
+                <div class="calc-row">
+                    <label for="pricePerKg">Selling Price of Product (per kg)</label>
+                    <input type="number" id="pricePerKg" placeholder="0" min="0" oninput="calculateExpenditure()">
+                </div>
+                <div class="calc-row" style="border-bottom: none;">
+                    <label for="yieldPerAcre">Produced amount (kg) per acre</label>
+                    <input type="number" id="yieldPerAcre" placeholder="0" min="0" oninput="calculateExpenditure()">
+                </div>
                 
-                <button class="calc-btn" onclick="calculateExpenditure()">Calculate Total Expenditure</button>
+                <button class="calc-btn" onclick="calculateExpenditure()">Calculate Analytics</button>
             </div>
             
-            <!-- Right Side: Calculated Total Output -->
+            <!-- Right Side: Calculated Analytics Output -->
             <div class="calc-results">
                 <div class="total-box">
-                    <h3>Total Expenditure</h3>
-                    <span class="total-amount">₹ <span id="total-output">0.00</span></span>
+                    <h3>Financial Analytics</h3>
+                    
+                    <div class="result-row">
+                        <span>Total Expenditure:</span>
+                        <span class="val">₹ <span id="total-output">0.00</span></span>
+                    </div>
+                    <div class="result-row">
+                        <span>Total Revenue:</span>
+                        <span class="val">₹ <span id="rev-output">0.00</span></span>
+                    </div>
+                    <div class="result-row">
+                        <span>Net Profit:</span>
+                        <span class="val" style="color: var(--primary);">₹ <span id="net-profit">0.00</span></span>
+                    </div>
+                    <div class="result-row">
+                        <span>Cost-Benefit Ratio (CBR):</span>
+                        <span class="val"><span id="cbr-output">0.00</span></span>
+                    </div>
+                    <div class="result-row">
+                        <span>Net Profit Per Acre:</span>
+                        <span class="val">₹ <span id="profit-acre-output">0.00</span></span>
+                    </div>
                 </div>
             </div>
             
@@ -335,7 +371,6 @@
         function resetTimer() { clearInterval(slideTimer); startTimer(); }
         startTimer();
 
-        // --- Language Selector Logic (Placeholder) ---
         function changeLanguage() {
             const lang = document.getElementById("language").value;
             console.log("Language switched to: " + lang);
@@ -343,6 +378,8 @@
 
         // --- Calculator Logic ---
         function calculateExpenditure() {
+            // Get Input Values
+            const area = parseFloat(document.getElementById('area').value) || 1; // Default to 1 to avoid NaN
             const seedling = parseFloat(document.getElementById('seedling').value) || 0;
             const tillage = parseFloat(document.getElementById('tillage').value) || 0;
             const pest = parseFloat(document.getElementById('pest').value) || 0;
@@ -350,9 +387,29 @@
             const harvest = parseFloat(document.getElementById('harvest').value) || 0;
             const manpower = parseFloat(document.getElementById('manpower').value) || 0;
             
-            const total = seedling + tillage + pest + irrigation + harvest + manpower;
+            // New Yield and Pricing Inputs
+            const pricePerKg = parseFloat(document.getElementById('pricePerKg').value) || 0;
+            const yieldPerAcre = parseFloat(document.getElementById('yieldPerAcre').value) || 0;
             
-            document.getElementById('total-output').innerText = total.toFixed(2);
+            // Perform Calculations
+            const totalExpenditure = seedling + tillage + pest + irrigation + harvest + manpower;
+            
+            // Revenue is now calculated dynamically from Yield and Price/kg
+            const totalYieldKg = area * yieldPerAcre;
+            const revenue = totalYieldKg * pricePerKg; 
+            
+            const netProfit = revenue - totalExpenditure;
+            const profitPerAcre = netProfit / area;
+            
+            // CBR formula: Total Benefits (Revenue) / Total Costs
+            const cbr = totalExpenditure > 0 ? (revenue / totalExpenditure) : 0;
+            
+            // Update Output Fields
+            document.getElementById('total-output').innerText = totalExpenditure.toFixed(2);
+            document.getElementById('rev-output').innerText = revenue.toFixed(2);
+            document.getElementById('net-profit').innerText = netProfit.toFixed(2);
+            document.getElementById('cbr-output').innerText = cbr.toFixed(2) + " : 1";
+            document.getElementById('profit-acre-output').innerText = profitPerAcre.toFixed(2);
         }
     </script>
 </body>
