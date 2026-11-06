@@ -16,20 +16,56 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* Navbar */
-        nav { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 1rem; }
-        nav h1 { color: var(--primary); font-size: 1.8rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; }
+        /* Navbar - Desktop & Mobile Friendly */
+        nav { 
+            background: #fff; 
+            padding: 1rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+        }
+        nav h1 { color: var(--primary); font-size: 1.8rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; white-space: nowrap; margin: 0; }
         
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; font-size: 1rem; }
+        .nav-links { 
+            display: flex; 
+            gap: 1.5rem; 
+            align-items: center; 
+        }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; font-size: 1rem; white-space: nowrap; }
         .nav-links a:hover { color: var(--primary); }
         .login-btn { background: var(--primary); color: white !important; padding: 8px 24px; border-radius: 30px; transition: background 0.3s; }
         .login-btn:hover { background: var(--dark); }
         
         /* Language Selector */
-        .lang-selector { margin-left: 10px; }
-        .lang-selector select { padding: 6px 12px; border-radius: 20px; border: 2px solid var(--primary); background: #f4f6f4; color: var(--dark); font-weight: bold; outline: none; cursor: pointer; transition: 0.3s; }
+        .lang-selector select { padding: 6px 12px; border-radius: 20px; border: 2px solid var(--primary); background: #f4f6f4; color: var(--dark); font-weight: bold; outline: none; cursor: pointer; transition: 0.3s; white-space: nowrap; }
         .lang-selector select:hover { background: #e8f5e9; }
+
+        /* --- Mobile Navbar Responsive CSS --- */
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: column; /* Stacks Logo above Links */
+                align-items: stretch;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .nav-links {
+                width: 100%;
+                overflow-x: auto; /* Enables horizontal scrolling */
+                flex-wrap: nowrap; /* Forces one line for all buttons */
+                -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+                padding-bottom: 5px; 
+                /* Hide scrollbar for cleaner look */
+                -ms-overflow-style: none;  
+                scrollbar-width: none;  
+            }
+            .nav-links::-webkit-scrollbar { 
+                display: none; 
+            }
+        }
 
         /* Global Section Titles */
         .section-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
@@ -77,7 +113,6 @@
         .total-box h3 { color: var(--dark); font-size: 1.5rem; margin-bottom: 15px; }
         .total-amount { color: var(--primary); font-size: 3rem; font-weight: 800; display: block; }
         
-        /* Mobile responsiveness for the calculator */
         @media (max-width: 768px) {
             .calc-wrapper { flex-direction: column; gap: 2rem; }
             .total-box { min-height: 200px; }
@@ -115,7 +150,6 @@
         <h1>Krishi Prakriti</h1>
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#services">Our Services</a>
             <a href="#about">About Us</a>
             <a href="#calculator">Cost Benefit Calculator</a>
             <a href="#contact">Contact Us</a>
@@ -139,47 +173,40 @@
     <section class="services-section" id="services">
         <h2 class="section-title">Our Services</h2>
         <div class="slider-container">
-            <div class="slide active" style="background-image: url('https://Sayan-gamer.github.io/images/1st.webp');">
+            <div class="slide active" style="background-image: url('https://sayan-gamer.github.io/images/1st.webp');">
                 <div class="slide-content">
                     <h2>Sustainable Agriculture</h2>
-                    <p>Implementing eco-friendly farming practices and resource management for a greener, more productive future.</p>
+                    <p>Building a sustainable India through innovation and climate action. <br> Covering Alternate Wetting and Drying (AWD) and Agricultural Waste Management.</p>
                 </div>
             </div>
-            <!-- ... other slides ... -->
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1592982537447-6f2a6a0c5c79?q=80&w=1920');">
+            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/2nd.webp');">
                 <div class="slide-content">
                     <h2>AI Based Application for Crop Health Monitoring</h2>
-                    <p>Diagnose and monitor crop health instantly using cutting-edge artificial intelligence and computer vision.</p>
+                    <p>Crop disease detection<br>Hazard alerts<br>Weather forecasting <br>AI assistant.</p>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=1920');">
+            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/3rd.webp');">
                 <div class="slide-content">
                     <h2>Post-Harvest Technology</h2>
-                    <p>Optimizing processing, handling, and storage solutions to minimize loss and maximize crop value.</p>
+                    <p>IoT-enabled sensors for agricultural produce.</p>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1508614999368-9260051292e5?q=80&w=1920');">
+            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/4th.webp');">
                 <div class="slide-content">
                     <h2>Drone Technology</h2>
-                    <p>Advanced aerial surveying and precision agriculture applications for smarter farm management.</p>
+                    <p>Promotes drone technology for precision spraying of pesticides and fertilisers, enabling targeted and efficient farm input application.</p>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1582298645084-282c0356c3ee?q=80&w=1920');">
+            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/5th.webp');">
                 <div class="slide-content">
-                    <h2>Cold Storage Design</h2>
-                    <p>Engineering advanced temperature-controlled infrastructure to extend shelf life and freshness of produce.</p>
+                    <h2>Rice silo design</h2>
+                    <p>Focuses on designing affordable, modern and energy-efficient rice storage silos to ensure safe bulk storage and minimise post-harvest losses.</p>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1615486511484-92e172cb4fbf?q=80&w=1920');">
-                <div class="slide-content">
-                    <h2>Food Product Drying Equipment Design</h2>
-                    <p>Designing highly efficient thermal and drying systems for enhanced food preservation and quality.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1920');">
+            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/6th.webp');">
                 <div class="slide-content">
                     <h2>Web Development for Rural Enterprises & FPOs</h2>
-                    <p>Empowering Farmer Producer Organizations and rural businesses with robust, tailored digital platforms.</p>
+                    <p>KRISHI PRAKRITI provides affordable website development and digital solutions for Farmer Producer Organisations (FPOs), Self-Help Groups (SHGs) and Custom Hiring Centres (CHCs).</p>
                 </div>
             </div>
             
@@ -192,7 +219,6 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
                 <span class="dot" onclick="currentSlide(4)"></span>
                 <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
             </div>
         </div>
     </section>
@@ -255,7 +281,6 @@
 
     <!-- 4. App Showcase Section -->
     <section class="app-section" id="app">
-        <!-- App content remains unchanged -->
         <div class="app-text">
             <h2>Instant Crop Disease Detection</h2>
             <p>Diagnose crop health in seconds. Our flagship mobile application analyzes leaf imagery in real-time to identify blights, mildews, and bacterial infections before they spread across your harvest.</p>
@@ -310,7 +335,7 @@
         function resetTimer() { clearInterval(slideTimer); startTimer(); }
         startTimer();
 
-        // --- Language Selector Logic (Placeholder for integration) ---
+        // --- Language Selector Logic (Placeholder) ---
         function changeLanguage() {
             const lang = document.getElementById("language").value;
             console.log("Language switched to: " + lang);
