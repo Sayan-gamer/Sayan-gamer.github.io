@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternate Wetting and Drying (AWD) - KRISHI PRAKRITI</title>
+    <style>
+        :root {
+            --primary: #2e7d32; 
+            --primary-light: #e8f5e9;
+            --dark: #1b5e20;
+            --water-blue: #0288d1;
+            --water-light: #e1f5fe;
+            --warning-red: #c62828;
+            --warning-light: #ffebee;
+            --text: #333;
+            --bg: #f9fbf9;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 3px solid var(--water-blue);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: var(--water-blue);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Section Styles */
+        .problems-section {
+            background-color: var(--warning-light);
+            border-left: 5px solid var(--warning-red);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .problems-section h2 {
+            color: var(--warning-red);
+            border-color: #ffcdd2;
+            margin-top: 0;
+        }
+
+        .awd-intro {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 5px solid var(--water-blue);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 3rem;
+        }
+
+        /* Step Cards for Procedures */
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--primary);
+        }
+
+        .step-card h3 {
+            color: var(--water-blue);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+
+        .nested-list {
+            background: var(--water-light);
+            padding: 15px 15px 15px 35px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-section h2 {
+            color: white;
+            border-color: rgba(255,255,255,0.3);
+            margin-top: 0;
+        }
+
+        .benefits-section h3 {
+            color: var(--primary-light);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        /* Carbon Credit Section */
+        .carbon-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            border-top: 5px solid #ff9800; /* Orange accent for carbon/energy */
+        }
+
+        .formula-box {
+            background: #fff3e0;
+            border: 2px dashed #ff9800;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .formula {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e65100;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .step-card {
+                padding: 1.5rem;
+            }
+            .benefits-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Alternate Wetting and Drying</h1>
+            <div class="subtitle">Sustainable Water Management in Rice Farming</div>
+        </header>
+
+        <section class="problems-section">
+            <h2>Problems in Conventional Rice Farming</h2>
+            <ul>
+                <li>Rice production consumes <strong>24-30% of global freshwater</strong>, requiring 3000-5,000 litres of water per kg of rice produced or 10 million L of water for every hectare, exacerbating scarcity for 2.2 billion people globally without access to safe drinking water.</li>
+                <li>In India, the agriculture sector consumes <strong>90% of its fresh water</strong>.</li>
+                <li>Rice cultivation contributes <strong>8-10% of global methane emissions</strong>, with 27 times the global warming potential of CO2.</li>
+            </ul>
+        </section>
+
+        <section class="awd-intro">
+            <h2>What is Alternate Wetting and Drying (AWD)?</h2>
+            <p>Alternate Wetting and Drying (AWD) is a water-saving technology that farmers can apply to reduce their irrigation water consumption in rice fields without decreasing yield.</p>
+            <p>In AWD, fields are allowed to dry out intermittently using perforated field pipes (typically 30 cm deep) to monitor water tables rather than staying continuously flooded. The number of days of non-flooded soil between irrigations can vary from 1 to more than 10 days depending on factors such as soil type, weather, and crop growth stage.</p>
+            <p><strong>Crucially:</strong> The AWD method reduces anaerobic conditions in the soil which are responsible for methane production.</p>
+        </section>
+
+        <h2>Step-by-Step Implementation Procedure</h2>
+        <div class="step-container">
+            
+            <div class="step-card">
+                <h3><span class="step-number">1</span> Preparation and Fabrication of the Field Water Tube (Pani Pipe)</h3>
+                <p>A key practical component of AWD is the field water tube, used to monitor the subsoil water level so that farmers know exactly when to re-irrigate.</p>
+                <ul>
+                    <li><strong>Material:</strong> A lightweight 4-inch diameter plastic PVC or bamboo pipe cut to a length of 30 cm.</li>
+                    <li><strong>Perforation:</strong> The lower 15 cm of the tube is drilled with small holes (approx. 5 mm wide), spaced about 2 cm apart. The top 15 cm remains solid and unperforated.</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">2</span> Pipe Installation in the Field</h3>
+                <ul>
+                    <li><strong>Timing:</strong> The tube is installed either during transplanting or within 1–2 weeks after transplanting the rice seedlings.</li>
+                    <li><strong>Placement:</strong> Choose an easily accessible, representative part of the field that is flat (not in the highest or lowest spot).</li>
+                    <li><strong>Depth:</strong> Dig the tube vertically into the puddled soil until the perforated lower 15 cm is completely buried below the soil surface. The solid upper 15 cm sticks out above the mud.</li>
+                    <li><strong>Clean out:</strong> Scoop out any soil or mud from the inside of the tube so that the water table level within the pipe matches the ground water table precisely.</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">3</span> Managing the Wetting and Drying Cycles</h3>
+                <p>The cultivation window is split into distinct stages:</p>
+                
+                <h4>Initial Phase (First 1–2 Weeks)</h4>
+                <p>Keep the field continuously flooded under 2–5 cm of water to allow the young seedlings to establish themselves and suppress initial weed growth.</p>
+                
+                <h4>The AWD Cycle Phase</h4>
+                <ol class="nested-list">
+                    <li>Flood the field to a depth of roughly 5 cm.</li>
+                    <li>Let the water naturally recede due to evaporation, seepage, and percolation.</li>
+                    <li>When there is no visible standing water on the ground, use the internal view of the water tube to monitor how deep the water drops.</li>
+                    <li><strong>The Safe Threshold:</strong> Once the water level inside the tube drops to 15 cm below the soil surface, it is time to re-irrigate. Re-flood the field back up to 5 cm and repeat the cycle.</li>
+                </ol>
+
+                <h4>Flowering Phase (Critical Exclusion Window)</h4>
+                <p>Stop the AWD cycle one week before flowering until one week after flowering. The field <strong>must remain continuously flooded</strong> to a depth of 5 cm during this period to prevent any crop yield loss from water stress.</p>
+                
+                <h4>Grain-Filling to Harvest Phase</h4>
+                <p>After the flowering stage concludes, resume the AWD cycle. Allow the subsoil water level to drop back down to 15 cm before re-irrigating until 1–2 weeks before harvest, at which point the field is drained completely.</p>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">4</span> Specialized Crop Management Under AWD</h3>
+                <ul>
+                    <li><strong>Weed Management:</strong> Because fields are periodically exposed to air, weed growth can increase compared to traditional farming. If the field suffers from heavy weeds, delay the start of the AWD cycle by 2–3 weeks and use targeted pre-emergence or post-emergence herbicides while the water is ponded.</li>
+                    <li><strong>Fertilizer Application:</strong> For maximum efficiency, schedule nitrogen (urea) applications when the field is in its dry phase, just before re-flooding the field. This allows the water to carry the nutrients directly to the root zone.</li>
+                </ul>
+            </div>
+        </div>
+        
+          <div class="img-container">
+                            <img src="awd/pipe.png">
+                            <div class="img-caption">Pipe in a field</div>
+                        </div>
+                          <div class="img-container">
+                            <img src="awd/pipe_install.png">
+                            <div class="img-caption">Pipe Installation Procedure</div>
+                        </div>
+
+        <section class="benefits-section">
+            <h2>Environmental Benefits</h2>
+            <p>Through the adoption of AWD, the programme aims to deliver significant environmental benefits. On average, it is estimated that <strong>24-40% of irrigation water</strong> and <strong>20–25% of irrigation expenses</strong> can be reduced compared to traditional flood irrigation practices, without any notable decrease in yield.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Climate Action</h4>
+                    <p>AWD can cut methane emissions by 50% from rice cultivation, contributing to India's climate commitments under the Paris Agreement.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h4>Water Conservation</h4>
+                    <p>AWD can cut water usage by 40% without any impact on yield. Water saved: 40 billion Liters (per 10000ha), which is equivalent to:</p>
+                    <ul style="margin-bottom: 0;">
+                        <li>≈ 10 months of water supply for a city of 10 lakh people.</li>
+                        <li>≈ 110 million litres per day for a full year.</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card">
+                    <h4>Sustainable Resource Management</h4>
+                    <p>Promoting more efficient water use, supporting environmentally responsible rice production and straw management, and putting an end to straw burning.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="carbon-section">
+            <h2>Carbon Credit Generation & Validation</h2>
+            <p>Step-by-Step Methodology:</p>
+            <ol>
+                <li><strong>Establish the baseline:</strong> Determine methane emissions under the existing rice cultivation practice, commonly continuous flooding. Collect data on water management, crop duration, soil characteristics, irrigation, and relevant agricultural inputs.</li>
+                <li><strong>Implement AWD:</strong> Alternate between irrigation and controlled drying periods during the rice-growing season. Record irrigation events, field water levels, drying duration, and the area adopting AWD.</li>
+                <li><strong>Estimate methane emissions under AWD:</strong> Quantify project emissions using the approved methodology, which may use field measurements, prescribed emission factors, or an approved model. Account for the effects of water management and other relevant field conditions.</li>
+                <li><strong>Calculate net emission reductions:</strong> Compare baseline emissions with project emissions, then account for relevant nitrous oxide emissions, leakage, and other deductions required by the methodology.</li>
+                <li><strong>Validate, verify, and issue credits:</strong> Submit the project design and monitoring evidence to the applicable carbon standard. After the required independent validation, verification, and registry procedures, eligible net emission reductions can be issued as carbon credits.</li>
+            </ol>
+
+            <div class="formula-box">
+                <h3>Core Calculation Formula</h3>
+                <div class="formula">
+                    Net ER = E_baseline − E_project − E_leakage − other required deductions
+                </div>
+                <p style="margin-bottom: 5px;">All emissions are expressed in tonnes of carbon dioxide equivalent (tCO₂e).<br> <strong>Carbon credits issued ≈ verified net ER in tCO₂e</strong></p>
+                <p style="font-size: 0.9rem; color: #666;">One carbon credit generally represents one metric tonne of verified CO₂-equivalent emission reductions.</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

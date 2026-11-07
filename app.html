@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Health Monitoring App - KRISHI PRAKRITI</title>
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #e8f5e9;
+            --accent-blue: #0277bd;
+            --light-blue: #e1f5fe;
+            --dark-text: #1a1a1a;
+            --gray-text: #4a4a4a;
+            --bg-color: #f8faf9;
+            --card-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--bg-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #1b5e20 100%);
+            color: white;
+            border-radius: 12px 12px 0 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--light-green);
+            font-weight: 500;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0 0 12px 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: var(--gray-text);
+        }
+
+        .intro-section p {
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Capabilities Section */
+        .capabilities-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .capability-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--accent-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .capability-card h3 {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .capability-card h3::before {
+            content: '✦';
+            color: var(--primary-green);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .capability-card p {
+            color: var(--gray-text);
+            font-size: 1.05rem;
+        }
+
+        /* App Link Section */
+        .app-link-section {
+            text-align: center;
+            padding: 3rem;
+            background: var(--light-blue);
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 2px dashed #81d4fa;
+        }
+
+        .app-btn {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(2, 119, 189, 0.4);
+        }
+
+        .app-btn:hover {
+            background-color: #01579b;
+            transform: scale(1.05);
+        }
+
+        /* Vision Section */
+        .vision-section {
+            background: linear-gradient(to right, #f1f8e9, white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 6px solid var(--primary-green);
+            box-shadow: var(--card-shadow);
+        }
+
+        .vision-section h2 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .vision-section p {
+            font-size: 1.15rem;
+            color: var(--dark-text);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .intro-section {
+                padding: 1.5rem;
+            }
+        }
+        
+        .app-mockup {
+			max-width: 100%;
+    height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Crop Health Monitoring</h1>
+            <p class="subtitle">Smart Farm Management Through Mobile Application</p>
+        </header>
+
+        <section class="intro-section">
+            <p>Empowering farmers with an intelligent, AI-driven digital platform that transforms conventional crop monitoring into data-driven farm management. Our mobile application integrates Artificial Intelligence (AI), Machine Learning (ML), image processing, and predictive analytics to deliver real-time crop health diagnostics, disease identification, pest detection, and scientifically informed remedial recommendations.</p>
+            <p>Beyond crop health monitoring, the platform incorporates <strong>Crop-Wise Revenue Estimation and Predictive Analytics</strong>, enabling farmers to make informed cultivation and investment decisions. By analysing crop selection, cultivated area, input costs, expected yield, prevailing market prices, and potential production risks, the application estimates cultivation expenditure, projected gross revenue, and expected net profit across different crops.</p>
+        </section>
+
+        <section class="capabilities-section">
+            <h2 class="section-title">Our Capabilities</h2>
+            <div class="grid-container">
+                
+                <div class="capability-card">
+                    <h3>AI-Powered Crop Disease Detection</h3>
+                    <p>Image-based identification of crop diseases, pest infestations, and visible plant health abnormalities.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h3>Intelligent Remedy Recommendations</h3>
+                    <p>Crop-specific treatment suggestions and preventive management practices.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h3>Real-Time Crop Health Monitoring</h3>
+                    <p>Early identification of potential crop health risks to minimise production losses.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h3>Crop-Wise Revenue Calculator</h3>
+                    <p>Estimates cultivation costs, gross income, net profit, and return on investment (ROI) for different crops.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h3>AI-Based Yield & Profit Prediction</h3>
+                    <p>Predicts potential crop yield, expected market returns, and profitability using relevant cultivation and market parameters.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h3>Weather-Integrated Advisory</h3>
+                    <p>Location-specific weather forecasts and hazard alerts to optimise agricultural operations.</p>
+                </div>
+
+                <div class="capability-card">
+                    <h3>Intelligent AI Farmer Assistant</h3>
+                    <p>Interactive agricultural guidance and decision support in farmers' preferred languages.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="app-link-section">
+            <h2 style="color: var(--accent-blue); margin-bottom: 20px;">Ready to Transform Your Farm?</h2>
+             <div class="intro-image">
+                    <img  src="app/app.png" alt="Crop Health App Interface" class="app-mockup">
+                </div>
+            <a href="#" class="app-btn">Download the App</a>
+        </section>
+
+        <section class="vision-section">
+            <h2>Our Vision</h2>
+            <p>"To develop an integrated digital farming ecosystem that combines crop health intelligence with financial forecasting, enabling farmers to transition towards precision agriculture, optimise input investments, minimise production risks, and maximise farm profitability through informed, technology-driven decisions."</p>
+        </section>
+
+    </div>
+
+</body>
+</html>

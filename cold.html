@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Storage Design - KRISHI PRAKRITI</title>
+    <style>
+        :root {
+            --primary: #2e7d32; 
+            --primary-light: #e8f5e9;
+            --dark: #1b5e20;
+            --text: #333;
+            --bg: #f9fbf9;
+            --border: #c8e6c9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 2.2rem;
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: 2rem;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--dark);
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-text {
+            font-size: 1.15rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border-left: 3px solid var(--primary-light);
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Image Placeholder Styles */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .img-container {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+        }
+
+        .storage-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background-color: #eaeeee; /* Fallback color before image loads */
+        }
+
+        .img-caption {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+            border-top: 1px solid #eee;
+        }
+
+        .formula-box {
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .formula-box h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+
+        .formula {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark);
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .definition {
+            font-style: italic;
+            color: #555;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container, .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cold Storage Design</h1>
+    </header>
+
+    <main>
+        <section class="intro-text">
+            <p>The basic purpose of cold storage is to store perishable food products at an optimum temperature to enhance the shelf-life of the products.</p>
+            <p>The storage conditions to be maintained as well as the method of storage for these cold storages vary depending on the optimum storage conditions required for different products.</p>
+        </section>
+
+        <section>
+            <h2>Types of Cold Storage</h2>
+            
+            <div class="grid-container">
+                <div>
+                    <h3>Based on Operating Temperature</h3>
+                    <ul>
+                        <li><strong>Above 0 ºC:</strong> Used for milk, fruits, and vegetables.</li>
+                         <div class="img-container">
+                            <img src="cold/above0.png">
+                            <div class="img-caption">Produce Storage (Above 0 ºC)</div>
+                        </div>
+                        <li><strong>Below 0 ºC:</strong> Used for ice-cream, meat, fish, etc.</li>
+                         <div class="img-container">
+                            <img src="cold/below0.png"">
+                            <div class="img-caption">Freezer Storage (Below 0 ºC)</div>
+                        </div>
+                    </ul>
+                 
+                </div>
+                   </section>
+                   <section>
+                <div>
+                    <h3>Based on Construction</h3>
+                    <ul>
+                        <li><strong>Constructed cold storage:</strong> Permanent construction.</li>
+                        
+                        <div class="img-container">
+                            <img src="cold/permanent.png">
+                            <div class="img-caption">Constructed Cold Storage</div>
+                        </div>
+                        <li><strong>Walk-in cold storage:</strong> Assembled units.</li>
+                                            <div class="img-container">
+                            <img src="cold/assembled.png">
+                            <div class="img-caption">Walk-in Cold Storage</div>
+                        </div>
+                    </div>
+
+                    </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Loads in Cold Storages</h2>
+            <p>To accurately design a cold storage system, various heat loads must be accounted for:</p>
+
+            <div class="grid-container">
+                <div>
+                    <ul>
+                        <li><strong>Transmission loads (t):</strong> Heat transferred through walls, roof, and floor.</li>
+                        <li><strong>Infiltration load (i):</strong> Heat from outside air entering the space.</li>
+                    </ul>
+         <div class="img-container">
+                            <img src="cold/loads.png">
+                            <div class="img-caption">Loads in Cold Storages</div>
+                        </div>
+                        </section>
+                        <section>
+							<div>
+                    <h3>Product Load</h3>
+                    <ul>
+                        <li><strong>Chilling load (c):</strong> Heat removed to lower product temperature above freezing.</li>
+                        <li><strong>Freezing load (f):</strong> Latent heat removed to freeze the product.</li>
+                        <li><strong>Cooling load before freezing (cb):</strong> Sensible heat removed just prior to the phase change.</li>
+                        <li><strong>Heat generated (m):</strong> Heat generated by the biological respiration of the material to be stored.</li>
+                    </ul>
+                </div>
+                    <div class="img-container">
+                            <img src="cold/productload.png">
+                            <div class="img-caption">Product Load</div>
+                        </div>
+                    <h3>Internal Loads</h3>
+                    <ul>
+                        <li><strong>Electrical Appliances (e):</strong> Cooling load required to offset heat from internal lighting and electronics.</li>
+                        <li><strong>Equipment (eq):</strong> Cooling load required for fans, motors, and similar operational equipment.</li>
+                    </ul>
+                    <div class="img-container">
+                            <img src="cold/internalload.png">
+                            <div class="img-caption">Internal Loads</div>
+                        </div>
+                </div>
+        </section>
+
+        <section class="formula-box">
+            <h3>Calculation of Cooling Loads</h3>
+            <div class="formula">
+                Total heat load = t + i + c + f + cb + m + e + eq
+            </div>
+            <p class="definition">
+                <strong>Definition:</strong> The quantity of heat energy that needs to be extracted from a space to keep it cool and comfortable (or at the required freezing/chilling threshold) regardless of internal or external heat generation.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Post-Harvest Technology - KRISHI PRAKRITI</title>
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --accent-blue: #0277bd;
+            --tech-dark: #263238;
+            --light-bg: #f5f9f6;
+            --card-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            --layer-1: #e1f5fe;
+            --layer-2: #b3e5fc;
+            --layer-3: #81d4fa;
+            --layer-4: #4fc3f7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--tech-dark) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: #a5d6a7;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 0 0 12px 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: #555;
+            border-bottom: 4px solid var(--accent-blue);
+        }
+
+        .intro-section p {
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            color: var(--tech-dark);
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-green);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--primary-green);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* Architecture Section */
+        .architecture-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 3rem;
+        }
+
+        .architecture-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #444;
+        }
+
+        .layers-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .layer-box {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 6px solid var(--accent-blue);
+            background: var(--layer-1);
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Stacking colors to look like a network stack */
+        .layer-box:nth-child(1) { background: var(--layer-1); border-color: #0277bd; }
+        .layer-box:nth-child(2) { background: var(--layer-2); border-color: #0288d1; }
+        .layer-box:nth-child(3) { background: var(--layer-3); border-color: #039be5; }
+        .layer-box:nth-child(4) { background: var(--layer-4); border-color: #03a9f4; }
+
+        .layer-title {
+            flex: 0 0 200px;
+            font-weight: bold;
+            color: var(--tech-dark);
+            font-size: 1.15rem;
+        }
+
+        .layer-desc {
+            flex: 1;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            .layer-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .layer-title {
+                flex: none;
+                border-bottom: 2px solid rgba(0,0,0,0.1);
+                padding-bottom: 5px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>IoT-Enabled Post-Harvest Technology</h1>
+            <p>Smart Produce Monitoring & Management</p>
+        </header>
+
+        <section class="intro-section">
+            <p><strong>KRISHI PRAKRITI</strong> promotes intelligent post-harvest management through IoT-enabled sensing technologies and digital monitoring solutions. We integrate smart sensors, real-time data acquisition, and remote monitoring systems to track critical storage parameters such as temperature, relative humidity, moisture content, and environmental conditions of agricultural produce.</p>
+            <p>Our solutions aim to minimise post-harvest losses, maintain produce quality, extend storage life, and improve operational efficiency across warehouses, cold storage facilities, grain silos, and agricultural supply chains.</p>
+        </section>
+
+        <h2 class="section-title">Our Services</h2>
+        <section class="services-grid">
+            <div class="service-card">
+                <h3>Real-Time Quality Monitoring</h3>
+                <p>IoT-based sensors for continuous monitoring of temperature, humidity, moisture, and storage conditions.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Smart Storage Management</h3>
+                <p>Automated alerts, remote monitoring, and data-driven control of storage environments.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Post-Harvest Loss Reduction</h3>
+                <p>Early detection of unfavourable storage conditions to minimise spoilage and preserve produce quality.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Digital Monitoring & Analytics</h3>
+                <p>Sensor-based data acquisition, historical trend analysis, and intelligent decision support.</p>
+            </div>
+        </section>
+
+        <section class="architecture-section">
+            <h2 class="section-title">System Architecture</h2>
+            <p class="architecture-intro">The Real Time Anomaly Detection (RTAD) system follows a 4-layer IoT architecture designed for robust and scalable monitoring:</p>
+            
+            <div class="layers-container">
+                <div class="layer-box">
+                    <div class="layer-title">1. Perception Layer</div>
+                    <div class="layer-desc">Sensors collect temperature, humidity, GPS, and accelerometer data directly from the storage environment.</div>
+                </div>
+
+                <div class="layer-box">
+                    <div class="layer-title">2. Network Layer</div>
+                    <div class="layer-desc">Data is transmitted via LTE-M (Long Term Evolution Machine) for highly reliable long-range, low-energy communication.</div>
+                </div>
+
+                <div class="layer-box">
+                    <div class="layer-title">3. Processing Layer</div>
+                    <div class="layer-desc">Data is stored in a PostgreSQL cloud database; advanced algorithms detect anomalies and automatically trigger alerts.</div>
+                </div>
+
+                <div class="layer-box">
+                    <div class="layer-title">4. Application Layer</div>
+                    <div class="layer-desc">A comprehensive web dashboard for real-time monitoring and an integrated SMS alert system for immediate staff notification.</div>
+                </div>
+            </div>
+            <br>
+            <img src="iot/delivery.png"  style="max-width: 100%; height: auto;">
+            <br>
+            <img src="iot/storage.png"  style="max-width: 100%; height: auto;">
+        </section>
+
+    </div>
+
+</body>
+</html>
