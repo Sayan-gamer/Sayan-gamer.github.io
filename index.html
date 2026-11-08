@@ -75,8 +75,14 @@
         /* 1. Services Section (Slider) */
         .services-section { padding: 4rem 0; background: var(--bg); }
         .slider-container { position: relative; width: 90%; max-width: 1400px; height: 60vh; margin: 0 auto; overflow: hidden; background: #000; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background-size: cover; background-position: center; }
-        .slide.active { opacity: 1; z-index: 1; }
+        .slide { 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    opacity: 0; transition: opacity 0.8s ease-in-out; display: flex; 
+    align-items: center; justify-content: center; text-align: center; 
+    color: white; background-size: cover; background-position: center; 
+    cursor: pointer; /* Add this line */
+}
+		.slide.active { opacity: 1; z-index: 1; }
         .slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.55); z-index: -1; }
         .slide-content { z-index: 2; padding: 0 20px; }
         .slide-content h2 { font-size: 2rem; margin-bottom: 10px; font-weight: 700; text-transform: capitalize; }
@@ -92,7 +98,7 @@
 
         /* 2. About Us Section */
         .about-section { padding: 4rem 5%; max-width: 90%; margin: 0 auto; text-align: center; }
-        .about-content { background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); text-align: left; }
+        .about-content { background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); text-align: justify; }
         .about-content p { font-size: 1.15rem; color: #555; margin-bottom: 1.5rem; }
         .about-content p:last-child { margin-bottom: 0; }
         
@@ -213,45 +219,56 @@
 
     <!-- 1. Services Section -->
     <section class="services-section" id="home">
-        
         <div class="slider-container">
-            <div class="slide active" style="background-image: url('https://sayan-gamer.github.io/images/1st.webp');">
-                <div class="slide-content">
-                    <h2>Sustainable Agriculture</h2>
-                    <p>Building a sustainable India through innovation and climate action. <br> Covering Alternate Wetting and Drying (AWD) and Agricultural Waste Management.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/2nd.webp');">
-                <div class="slide-content">
-                    <h2>AI Based Application for Crop Health Monitoring</h2>
-                    <p>Crop disease detection<br>Hazard alerts<br>Weather forecasting <br>AI assistant.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/3rd.webp');">
-                <div class="slide-content">
-                    <h2>Post-Harvest Technology</h2>
-                    <p>IoT-enabled sensors for agricultural produce.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/4th.webp');">
-                <div class="slide-content">
-                    <h2>Drone Technology</h2>
-                    <p>Promotes drone technology for precision spraying of pesticides and fertilisers, enabling targeted and efficient farm input application.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/5th.webp');">
-                <div class="slide-content">
-                    <h2>Rice silo design</h2>
-                    <p>Focuses on designing affordable, modern and energy-efficient rice storage silos to ensure safe bulk storage and minimise post-harvest losses.</p>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/6th.webp');">
-                <div class="slide-content">
-                    <h2>Web Development for Rural Enterprises & FPOs</h2>
-                    <p>KRISHI PRAKRITI provides affordable website development and digital solutions for Farmer Producer Organisations (FPOs), Self-Help Groups (SHGs) and Custom Hiring Centres (CHCs).</p>
-                </div>
-            </div>
-            
+    <!-- Slide 0 -->
+    <div class="slide active" style="background-image: url('https://sayan-gamer.github.io/images/1st.webp');" onclick="window.location.href='awd.html'">
+        <div class="slide-content">
+            <h2>Sustainable Agriculture</h2>
+            <p>Building a sustainable India through innovation and climate action. <br> Covering Alternate Wetting and Drying (AWD) and Agricultural Waste Management.</p>
+        </div>
+    </div>
+    
+    <!-- Slide 1 -->
+    <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/2nd.webp');" onclick="window.location.href='app.html'">
+        <div class="slide-content">
+            <h2>AI Based Application for Crop Health Monitoring</h2>
+            <p>Crop disease detection<br>Hazard alerts<br>Weather forecasting <br>AI assistant.</p>
+        </div>
+    </div>
+    
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/3rd.webp');" onclick="window.location.href='iot.html'">
+        <div class="slide-content">
+            <h2>Post-Harvest Technology</h2>
+            <p>IoT-enabled sensors for agricultural produce.</p>
+        </div>
+    </div>
+    
+    <!-- Slide 3 -->
+    <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/4th.webp');" onclick="window.location.href='drone.html'">
+        <div class="slide-content">
+            <h2>Drone Technology</h2>
+            <p>Promotes drone technology for precision spraying of pesticides and fertilisers, enabling targeted and efficient farm input application.</p>
+        </div>
+    </div>
+    
+    <!-- Slide 4 -->
+    <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/5th.webp');" onclick="window.location.href='cold.html'">
+        <div class="slide-content">
+            <h2>Rice silo design</h2>
+            <p>Focuses on designing affordable, modern and energy-efficient rice storage silos to ensure safe bulk storage and minimise post-harvest losses.</p>
+        </div>
+    </div>
+    
+    <!-- Slide 5 -->
+    <div class="slide" style="background-image: url('https://sayan-gamer.github.io/images/6th.webp');" onclick="window.location.href='web.html'">
+        <div class="slide-content">
+            <h2>Web Development for Rural Enterprises & FPOs</h2>
+            <p>KRISHI PRAKRITI provides affordable website development and digital solutions for Farmer Producer Organisations (FPOs), Self-Help Groups (SHGs) and Custom Hiring Centres (CHCs).</p>
+        </div>
+    </div>
+    
+    <!-- Arrow Buttons ... -->
             <button class="slider-arrow arrow-prev" onclick="changeSlide(-1)">&#10094;</button>
             <button class="slider-arrow arrow-next" onclick="changeSlide(1)">&#10095;</button>
             <div class="slider-nav">
@@ -269,9 +286,9 @@
     <section class="about-section" id="about">
         <h2 class="section-title">About Us</h2>
         <div class="about-content">
-            <p>At <strong>Krishi Prakriti</strong>, we are deeply committed to transforming the agricultural landscape by blending traditional farming knowledge with next-generation technology. We recognize the challenges modern farmers and rural enterprises face, from unpredictable climates to supply chain inefficiencies.</p>
-            <p>Our mission is to empower the agricultural community—specifically rural enterprises and Farmer Producer Organizations (FPOs)—by providing accessible, data-driven tools. Through advanced AI-based crop health monitoring, precision drone technology, and state-of-the-art cold storage and post-harvest design, we help minimize losses and maximize crop yields.</p>
-            <p>We build sustainable, high-impact digital platforms and mechanical solutions designed to ensure a thriving, profitable, and greener agricultural ecosystem for generations to come.</p>
+            <p><strong>KRISHI PRAKRITI</strong> is an Agri-Tech initiative, we are committed to transforming the agricultural sector through innovative technologies, sustainable farming practices, and affordable digital solutions.</p>
+            <p>We work across multiple areas of agricultural development, including sustainable rice cultivation, agricultural waste management, carbon project development, drone technology, IoT-based monitoring, post-harvest management, cold storage design, and digital solutions for agricultural organizations.</p>
+            
         </div>
     </section>
 
