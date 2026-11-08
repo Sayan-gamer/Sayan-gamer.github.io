@@ -70,6 +70,7 @@
         ul {
             list-style-type: none;
             padding-left: 0;
+            margin-bottom: 1rem;
         }
 
         ul li {
@@ -90,37 +91,42 @@
             margin-right: 10px;
         }
 
-        /* Image Placeholder Styles */
-        .image-gallery {
+        /* Single Column Grid */
+        .grid-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: 1fr; /* Forced to single column */
+            gap: 20px;
         }
 
+        /* Large Centered Image Styles */
         .img-container {
+            width: 90%; /* 90% of the screen/container width */
+            margin: 2rem auto; /* Centered horizontally with auto margins */
             background: #fff;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: center;
         }
 
-        .storage-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .img-container img {
+            width: 100%; /* Stretches to fill the 90% container */
+            height: auto;
             display: block;
-            background-color: #eaeeee; /* Fallback color before image loads */
+            margin: 0 auto;
+            border-radius: 4px;
+            object-fit: cover;
+            background-color: #eaeeee;
         }
 
         .img-caption {
-            padding: 10px;
+            padding-top: 15px;
             text-align: center;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--dark);
-            border-top: 1px solid #eee;
         }
 
         .formula-box {
@@ -129,7 +135,7 @@
             padding: 2rem;
             text-align: center;
             border-radius: 8px;
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
 
         .formula-box h3 {
@@ -155,18 +161,6 @@
             font-size: 1rem;
             margin-top: 1rem;
         }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .grid-container, .image-gallery {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
@@ -189,37 +183,39 @@
                     <h3>Based on Operating Temperature</h3>
                     <ul>
                         <li><strong>Above 0 ºC:</strong> Used for milk, fruits, and vegetables.</li>
-                         <div class="img-container">
-                            <img src="cold/above0.png">
-                            <div class="img-caption">Produce Storage (Above 0 ºC)</div>
-                        </div>
-                        <li><strong>Below 0 ºC:</strong> Used for ice-cream, meat, fish, etc.</li>
-                         <div class="img-container">
-                            <img src="cold/below0.png"">
-                            <div class="img-caption">Freezer Storage (Below 0 ºC)</div>
-                        </div>
                     </ul>
-                 
+                    <div class="img-container">
+                        <img src="cold/above0.png" alt="Produce Storage">
+                        <div class="img-caption">Produce Storage (Above 0 ºC)</div>
+                    </div>
+
+                    <ul>
+                        <li><strong>Below 0 ºC:</strong> Used for ice-cream, meat, fish, etc.</li>
+                    </ul>
+                    <div class="img-container">
+                        <img src="cold/below0.png" alt="Freezer Storage">
+                        <div class="img-caption">Freezer Storage (Below 0 ºC)</div>
+                    </div>
                 </div>
-                   </section>
-                   <section>
+
                 <div>
                     <h3>Based on Construction</h3>
                     <ul>
                         <li><strong>Constructed cold storage:</strong> Permanent construction.</li>
-                        
-                        <div class="img-container">
-                            <img src="cold/permanent.png">
-                            <div class="img-caption">Constructed Cold Storage</div>
-                        </div>
-                        <li><strong>Walk-in cold storage:</strong> Assembled units.</li>
-                                            <div class="img-container">
-                            <img src="cold/assembled.png">
-                            <div class="img-caption">Walk-in Cold Storage</div>
-                        </div>
+                    </ul>
+                    <div class="img-container">
+                        <img src="cold/permanent.png" alt="Constructed Cold Storage">
+                        <div class="img-caption">Constructed Cold Storage</div>
                     </div>
 
+                    <ul>
+                        <li><strong>Walk-in cold storage:</strong> Assembled units.</li>
                     </ul>
+                    <div class="img-container">
+                        <img src="cold/assembled.png" alt="Walk-in Cold Storage">
+                        <div class="img-caption">Walk-in Cold Storage</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -233,13 +229,13 @@
                         <li><strong>Transmission loads (t):</strong> Heat transferred through walls, roof, and floor.</li>
                         <li><strong>Infiltration load (i):</strong> Heat from outside air entering the space.</li>
                     </ul>
-         <div class="img-container">
-                            <img src="cold/loads.png">
-                            <div class="img-caption">Loads in Cold Storages</div>
-                        </div>
-                        </section>
-                        <section>
-							<div>
+                    <div class="img-container">
+                        <img src="cold/loads.png" alt="Loads in Cold Storages">
+                        <div class="img-caption">Loads in Cold Storages</div>
+                    </div>
+                </div>
+
+                <div>
                     <h3>Product Load</h3>
                     <ul>
                         <li><strong>Chilling load (c):</strong> Heat removed to lower product temperature above freezing.</li>
@@ -247,21 +243,22 @@
                         <li><strong>Cooling load before freezing (cb):</strong> Sensible heat removed just prior to the phase change.</li>
                         <li><strong>Heat generated (m):</strong> Heat generated by the biological respiration of the material to be stored.</li>
                     </ul>
-                </div>
                     <div class="img-container">
-                            <img src="cold/productload.png">
-                            <div class="img-caption">Product Load</div>
-                        </div>
+                        <img src="cold/productload.png" alt="Product Load">
+                        <div class="img-caption">Product Load</div>
+                    </div>
+
                     <h3>Internal Loads</h3>
                     <ul>
                         <li><strong>Electrical Appliances (e):</strong> Cooling load required to offset heat from internal lighting and electronics.</li>
                         <li><strong>Equipment (eq):</strong> Cooling load required for fans, motors, and similar operational equipment.</li>
                     </ul>
                     <div class="img-container">
-                            <img src="cold/internalload.png">
-                            <div class="img-caption">Internal Loads</div>
-                        </div>
+                        <img src="cold/internalload.png" alt="Internal Loads">
+                        <div class="img-caption">Internal Loads</div>
+                    </div>
                 </div>
+            </div>
         </section>
 
         <section class="formula-box">

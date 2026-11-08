@@ -234,10 +234,10 @@
             box-shadow: var(--card-shadow);
         }
 
-        .gallery-img-wrapper img {
+      .gallery-img-wrapper img {
             width: 100%;
-            height: 300px; /* Forces all images to be the same height */
-            object-fit: cover; /* Prevents stretching */
+            height: auto; /* Changed from fixed height */
+            aspect-ratio: auto; /* Maintains original image proportions */
             display: block;
             transition: transform 0.3s ease;
         }
@@ -249,8 +249,11 @@
         /* Make it 1 image per row on small mobile screens so it doesn't get too squeezed */
         @media (max-width: 600px) {
             .image-grid-2x5 {
-                grid-template-columns: 1fr;
-            }
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            align-items: start; /* Prevents taller images from stretching shorter ones in the same row */
+        }
         }
         
     </style>
@@ -356,26 +359,26 @@
                 
                 <!-- Row 3 -->
                 <div class="gallery-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400?text=Image+5" alt="Waste Management Image 5">
+                    <img src="waste/5.png" alt="Waste Management Image 5">
                 </div>
                 <div class="gallery-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400?text=Image+6" alt="Waste Management Image 6">
+                    <img src="waste/6.png" alt="Waste Management Image 6">
                 </div>
                 
                 <!-- Row 4 -->
                 <div class="gallery-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400?text=Image+7" alt="Waste Management Image 7">
+                    <img src="waste/7.png" alt="Waste Management Image 7">
                 </div>
                 <div class="gallery-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400?text=Image+8" alt="Waste Management Image 8">
+                    <img src="waste/8.png" alt="Waste Management Image 8">
                 </div>
                 
                 <!-- Row 5 -->
                 <div class="gallery-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400?text=Image+9" alt="Waste Management Image 9">
+                    <img src="waste/9.png" alt="Waste Management Image 9">
                 </div>
                 <div class="gallery-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400?text=Image+10" alt="Waste Management Image 10">
+                    <img src="waste/10.png" alt="Waste Management Image 10">
                 </div>
             </div>
         </section>

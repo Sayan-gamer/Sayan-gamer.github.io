@@ -227,6 +227,49 @@
                 padding: 2rem;
             }
         }
+        
+        /* Image Container Styles */
+        .img-container {
+            width: 100%;
+            text-align: center;
+            margin: 2rem auto;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .img-container img {
+            max-width: 100%; /* Matches parent width without overflowing */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        .img-caption {
+            margin-top: 10px;
+            color: #666;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+			.book-now-btn {
+            display: table; /* Forces block-level behavior but keeps it tightly wrapped around the text */
+            margin: 20px auto 0; /* 'auto' on left and right automatically centers it */
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .book-now-btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -246,13 +289,16 @@
             </ul>
         </section>
 
-        <section class="awd-intro">
+       <section class="awd-intro">
             <h2>What is Alternate Wetting and Drying (AWD)?</h2>
             <p>Alternate Wetting and Drying (AWD) is a water-saving technology that farmers can apply to reduce their irrigation water consumption in rice fields without decreasing yield.</p>
             <p>In AWD, fields are allowed to dry out intermittently using perforated field pipes (typically 30 cm deep) to monitor water tables rather than staying continuously flooded. The number of days of non-flooded soil between irrigations can vary from 1 to more than 10 days depending on factors such as soil type, weather, and crop growth stage.</p>
             <p><strong>Crucially:</strong> The AWD method reduces anaerobic conditions in the soil which are responsible for methane production.</p>
+            
+            <!-- Added Book Now Button -->
+            <a href="#" class="book-now-btn">Book Now</a>
         </section>
-
+        
         <h2>Step-by-Step Implementation Procedure</h2>
         <div class="step-container">
             
@@ -307,13 +353,13 @@
         </div>
         
           <div class="img-container">
-                            <img src="awd/pipe.png">
-                            <div class="img-caption">Pipe in a field</div>
-                        </div>
-                          <div class="img-container">
-                            <img src="awd/pipe_install.png">
-                            <div class="img-caption">Pipe Installation Procedure</div>
-                        </div>
+            <img src="awd/pipe.png" alt="Pipe in a field">
+            <div class="img-caption">Pipe in a field</div>
+        </div>
+        <div class="img-container">
+            <img src="awd/pipe_install.png" alt="Pipe Installation Procedure">
+            <div class="img-caption">Pipe Installation Procedure</div>
+        </div>
 
         <section class="benefits-section">
             <h2>Environmental Benefits</h2>
