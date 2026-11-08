@@ -21,6 +21,10 @@
             margin: 0;
             padding: 0;
         }
+        
+        p {
+			text-align:justify;
+			}
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,6 +69,7 @@
             box-shadow: var(--card-shadow);
             margin-bottom: 3rem;
             font-size: 1.1rem;
+            text-align: justify;
             color: var(--gray-text);
         }
 
@@ -128,7 +133,6 @@
         }
 
         .capability-card h3::before {
-            content: '✦';
             color: var(--primary-green);
             margin-right: 10px;
             font-size: 1.5rem;
@@ -209,12 +213,12 @@
         
         <header>
             <h1>Crop Health Monitoring</h1>
-            <p class="subtitle">Smart Farm Management Through Mobile Application</p>
+            <h5 class="subtitle">Smart Farm Management Through Mobile Application</h5>
         </header>
 
         <section class="intro-section">
             <p>Empowering farmers with an intelligent, AI-driven digital platform that transforms conventional crop monitoring into data-driven farm management. Our mobile application integrates Artificial Intelligence (AI), Machine Learning (ML), image processing, and predictive analytics to deliver real-time crop health diagnostics, disease identification, pest detection, and scientifically informed remedial recommendations.</p>
-            <p>Beyond crop health monitoring, the platform incorporates <strong>Crop-Wise Revenue Estimation and Predictive Analytics</strong>, enabling farmers to make informed cultivation and investment decisions. By analysing crop selection, cultivated area, input costs, expected yield, prevailing market prices, and potential production risks, the application estimates cultivation expenditure, projected gross revenue, and expected net profit across different crops.</p>
+            
         </section>
 
         <section class="capabilities-section">
@@ -241,10 +245,7 @@
                     <p>Estimates cultivation costs, gross income, net profit, and return on investment (ROI) for different crops.</p>
                 </div>
 
-                <div class="capability-card">
-                    <h3>AI-Based Yield & Profit Prediction</h3>
-                    <p>Predicts potential crop yield, expected market returns, and profitability using relevant cultivation and market parameters.</p>
-                </div>
+
 
                 <div class="capability-card">
                     <h3>Weather-Integrated Advisory</h3>

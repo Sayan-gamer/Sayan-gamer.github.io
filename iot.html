@@ -17,6 +17,10 @@
             --layer-4: #4fc3f7;
         }
 
+	        p {
+			text-align:justify;
+			}
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -174,6 +178,7 @@
             font-weight: bold;
             color: var(--tech-dark);
             font-size: 1.15rem;
+            text-align: center;
         }
 
         .layer-desc {
@@ -195,6 +200,24 @@
                 width: 100%;
             }
         }
+        
+        .book-now-btn {
+            display: table; /* Forces block-level behavior but keeps it tightly wrapped around the text */
+            margin: 20px auto 0; /* 'auto' on left and right automatically centers it */
+            background-color: green;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .book-now-btn:hover {
+            background-color: gray;
+            transform: translateY(-2px);
+        }
+        
     </style>
 </head>
 <body>
@@ -203,12 +226,12 @@
         
         <header>
             <h1>IoT-Enabled Post-Harvest Technology</h1>
-            <p>Smart Produce Monitoring & Management</p>
+            <h5>Smart Produce Monitoring & Management</h5>
         </header>
 
         <section class="intro-section">
             <p><strong>KRISHI PRAKRITI</strong> promotes intelligent post-harvest management through IoT-enabled sensing technologies and digital monitoring solutions. We integrate smart sensors, real-time data acquisition, and remote monitoring systems to track critical storage parameters such as temperature, relative humidity, moisture content, and environmental conditions of agricultural produce.</p>
-            <p>Our solutions aim to minimise post-harvest losses, maintain produce quality, extend storage life, and improve operational efficiency across warehouses, cold storage facilities, grain silos, and agricultural supply chains.</p>
+                        <a href="#" class="book-now-btn">Book Service</a>
         </section>
 
         <h2 class="section-title">Our Services</h2>
@@ -241,22 +264,22 @@
             <div class="layers-container">
                 <div class="layer-box">
                     <div class="layer-title">1. Perception Layer</div>
-                    <div class="layer-desc">Sensors collect temperature, humidity, GPS, and accelerometer data directly from the storage environment.</div>
+                    
                 </div>
 
                 <div class="layer-box">
                     <div class="layer-title">2. Network Layer</div>
-                    <div class="layer-desc">Data is transmitted via LTE-M (Long Term Evolution Machine) for highly reliable long-range, low-energy communication.</div>
+                    
                 </div>
 
                 <div class="layer-box">
                     <div class="layer-title">3. Processing Layer</div>
-                    <div class="layer-desc">Data is stored in a PostgreSQL cloud database; advanced algorithms detect anomalies and automatically trigger alerts.</div>
+                    
                 </div>
 
                 <div class="layer-box">
                     <div class="layer-title">4. Application Layer</div>
-                    <div class="layer-desc">A comprehensive web dashboard for real-time monitoring and an integrated SMS alert system for immediate staff notification.</div>
+                    
                 </div>
             </div>
             <br>

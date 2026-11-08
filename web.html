@@ -70,6 +70,27 @@
             font-size: 1.15rem;
             color: var(--text-muted);
         }
+        
+	        p {
+			text-align:justify;
+			}
+
+			.book-now-btn {
+            display: table; /* Forces block-level behavior but keeps it tightly wrapped around the text */
+            margin: 20px auto 0; /* 'auto' on left and right automatically centers it */
+            background-color: green;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .book-now-btn:hover {
+            background-color: gray;
+            transform: translateY(-2px);
+        }
 
         .intro-text p {
             margin-bottom: 1.5rem;
@@ -180,6 +201,7 @@
             <div class="intro-text">
                 <p><strong>KRISHI PRAKRITI</strong> provides affordable, customised website development and digital solutions to empower Farmer Producer Organisations (FPOs), Self-Help Groups (SHGs), and Custom Hiring Centres (CHCs).</p>
                 <p>We help rural organisations establish a professional digital presence, strengthen market connectivity, showcase their products and services, and enhance business visibility through accessible and scalable web technologies.</p>
+            <a href="#" class="book-now-btn">Book Service</a>
             </div>
             
             <!-- 2 Images in 2 Rows (Stacked vertically) -->

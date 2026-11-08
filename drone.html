@@ -30,11 +30,34 @@
             padding: 15px;
             border-left: 4px solid #3a7a22;
             border-radius: 4px;
+            text-align: justify;
         }
         strong {
             color: #1a1a1a;
             font-size: 1.1em;
         }
+        
+        p{
+			text-align: justify;
+			}
+        
+        .book-now-btn {
+            display: table; /* Forces block-level behavior but keeps it tightly wrapped around the text */
+            margin: 20px auto 0; /* 'auto' on left and right automatically centers it */
+            background-color: green;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .book-now-btn:hover {
+            background-color: gray;
+            transform: translateY(-2px);
+        }
+        
     </style>
 </head>
 <body>
@@ -51,7 +74,10 @@
             <p>
                 Our services focus on targeted pesticide and fertiliser application, crop growth assessment, and efficient field operations, reducing unnecessary chemical usage and supporting precision-based agricultural practices.
             </p>
+            
+            <a href="#" class="book-now-btn">Book Service</a>
         </section>
+        
 
         <section class="services">
             <h2>Our Services:</h2>

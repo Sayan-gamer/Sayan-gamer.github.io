@@ -55,6 +55,7 @@
         p {
             font-size: 1.1rem;
             margin-bottom: 1rem;
+            text-align:justify ;
         }
 
         .intro-text {
@@ -161,6 +162,24 @@
             font-size: 1rem;
             margin-top: 1rem;
         }
+        
+        			.book-now-btn {
+            display: table; /* Forces block-level behavior but keeps it tightly wrapped around the text */
+            margin: 20px auto 0; /* 'auto' on left and right automatically centers it */
+            background-color: green;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .book-now-btn:hover {
+            background-color: gray;
+            transform: translateY(-2px);
+        }
+        
     </style>
 </head>
 <body>
@@ -173,6 +192,7 @@
         <section class="intro-text">
             <p>The basic purpose of cold storage is to store perishable food products at an optimum temperature to enhance the shelf-life of the products.</p>
             <p>The storage conditions to be maintained as well as the method of storage for these cold storages vary depending on the optimum storage conditions required for different products.</p>
+            <a href="#" class="book-now-btn">Book Service</a>
         </section>
 
         <section>
