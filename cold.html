@@ -23,14 +23,29 @@
             margin: 0 auto;
             padding: 20px;
         }
+        
+             img {
+        max-width: 600px;
+    height: auto;
+    display: block;  /* Forces the image to behave like a block element */
+    margin: 0 auto;  /* Centers the block by applying equal left and right margins */
+    border-radius: 4px;
+}
 
-        header {
+
+       header {
             text-align: center;
-            padding: 2rem 0;
-            border-bottom: 2px solid var(--primary);
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--water-blue);
             margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            /* Add your image path here. The linear-gradient creates a readable overlay */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(249, 251, 249, 0.80)), url('cold/title.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         h1 {
             color: var(--dark);
             text-transform: uppercase;
@@ -101,7 +116,7 @@
 
         /* Large Centered Image Styles */
         .img-container {
-            width: 90%; /* 90% of the screen/container width */
+            width-max: 600px; /* 90% of the screen/container width */
             margin: 2rem auto; /* Centered horizontally with auto margins */
             background: #fff;
             border-radius: 8px;
@@ -202,7 +217,7 @@
                 <div>
                     <h3>Based on Operating Temperature</h3>
                     <ul>
-                        <li><strong>Above 0 ºC:</strong> Used for milk, fruits, and vegetables.</li>
+                        <li><strong>Above 0 ºC (Used for milk, fruits, and vegetables.):</strong> </li>
                     </ul>
                     <div class="img-container">
                         <img src="cold/above0.webp" alt="Produce Storage">
@@ -210,7 +225,7 @@
                     </div>
 
                     <ul>
-                        <li><strong>Below 0 ºC:</strong> Used for ice-cream, meat, fish, etc.</li>
+                        <li><strong>Below 0 ºC (Used for ice-cream, meat, fish, etc.):</strong></li>
                     </ul>
                     <div class="img-container">
                         <img src="cold/below0.webp" alt="Freezer Storage">
@@ -221,7 +236,7 @@
                 <div>
                     <h3>Based on Construction</h3>
                     <ul>
-                        <li><strong>Constructed cold storage:</strong> Permanent construction.</li>
+                        <li><strong>Constructed cold storage (Permanent construction):</strong> </li>
                     </ul>
                     <div class="img-container">
                         <img src="cold/permanent.webp" alt="Constructed Cold Storage">
@@ -229,7 +244,7 @@
                     </div>
 
                     <ul>
-                        <li><strong>Walk-in cold storage:</strong> Assembled units.</li>
+                        <li><strong>Walk-in cold storage (Assembled units):</strong></li>
                     </ul>
                     <div class="img-container">
                         <img src="cold/assembled.webp" alt="Walk-in Cold Storage">

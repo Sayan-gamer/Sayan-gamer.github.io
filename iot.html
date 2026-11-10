@@ -17,9 +17,9 @@
             --layer-4: #4fc3f7;
         }
 
-	        p {
-			text-align:justify;
-			}
+        p {
+            text-align: justify;
+        }
 
         * {
             box-sizing: border-box;
@@ -41,13 +41,19 @@
         }
 
         /* Header */
+        
         header {
-            background: linear-gradient(135deg, var(--tech-dark) 0%, var(--primary-green) 100%);
-            color: white;
-            padding: 3rem 2rem;
             text-align: center;
-            border-radius: 12px 12px 0 0;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--water-blue);
+            margin-bottom: 2rem;
+            border-radius: 12px;
             box-shadow: var(--card-shadow);
+            /* Add your image path here. The linear-gradient creates a readable overlay */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(249, 251, 249, 0.80)), url('iot/ioit.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         header h1 {
@@ -55,17 +61,23 @@
             margin-bottom: 10px;
             letter-spacing: 1px;
         }
+        
+        
 
         header p {
-            color: #a5d6a7;
+            color: #17561A;
             font-size: 1.2rem;
             font-weight: 500;
+			text-align: center;
+			
         }
+        
+       
 
         /* Intro Section */
         .intro-section {
             background: white;
-            padding: 3rem;
+            padding: 1rem;
             border-radius: 0 0 12px 12px;
             box-shadow: var(--card-shadow);
             margin-bottom: 3rem;
@@ -75,7 +87,7 @@
         }
 
         .intro-section p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.85rem;
         }
 
         .intro-section p:last-child {
@@ -153,7 +165,7 @@
             flex-direction: column;
             gap: 15px;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 2rem auto;
         }
 
         .layer-box {
@@ -167,7 +179,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        /* Stacking colors to look like a network stack */
         .layer-box:nth-child(1) { background: var(--layer-1); border-color: #0277bd; }
         .layer-box:nth-child(2) { background: var(--layer-2); border-color: #0288d1; }
         .layer-box:nth-child(3) { background: var(--layer-3); border-color: #039be5; }
@@ -201,10 +212,30 @@
             }
         }
         
+        /* Fixed Image CSS */
+       img {
+            max-width: 95%; /* Ensures it doesn't break on small mobile screens */
+            width: 500px;    /* Sets the target width */
+            max-height: 300px;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Replaced undefined variable */
+            transition: transform 0.3s ease;
+        }
+        
+     
+        
+        img:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Buttons */
         .book-now-btn {
-            display: table; /* Forces block-level behavior but keeps it tightly wrapped around the text */
-            margin: 20px auto 0; /* 'auto' on left and right automatically centers it */
-            background-color: green;
+            display: table;
+            margin: 30px auto 0;
+            background-color: var(--primary-green);
             color: white;
             text-decoration: none;
             padding: 12px 24px;
@@ -214,7 +245,7 @@
         }
 
         .book-now-btn:hover {
-            background-color: gray;
+            background-color: var(--tech-dark);
             transform: translateY(-2px);
         }
         
@@ -226,16 +257,18 @@
         
         <header>
             <h1>IoT-Enabled Post-Harvest Technology</h1>
-            <h5>Smart Produce Monitoring & Management</h5>
+            <p>Smart Produce Monitoring & Management</p>
         </header>
 
         <section class="intro-section">
             <p><strong>KRISHI PRAKRITI</strong> promotes intelligent post-harvest management through IoT-enabled sensing technologies and digital monitoring solutions. We integrate smart sensors, real-time data acquisition, and remote monitoring systems to track critical storage parameters such as temperature, relative humidity, moisture content, and environmental conditions of agricultural produce.</p>
-                        <a href="#" class="book-now-btn">Book Service</a>
+            <a href="#" class="book-now-btn">Book Service</a>
         </section>
 
         <h2 class="section-title">Our Services</h2>
-        <section class="services-grid">
+        
+        <!-- Fixed missing services-grid wrapper -->
+        <div class="services-grid">
             <div class="service-card">
                 <h3>Real-Time Quality Monitoring</h3>
                 <p>IoT-based sensors for continuous monitoring of temperature, humidity, moisture, and storage conditions.</p>
@@ -255,7 +288,9 @@
                 <h3>Digital Monitoring & Analytics</h3>
                 <p>Sensor-based data acquisition, historical trend analysis, and intelligent decision support.</p>
             </div>
-        </section>
+        </div>
+            
+        <img src="iot/iot1.webp" alt="IoT Service Overview">
 
         <section class="architecture-section">
             <h2 class="section-title">System Architecture</h2>
@@ -264,31 +299,26 @@
             <div class="layers-container">
                 <div class="layer-box">
                     <div class="layer-title">1. Perception Layer</div>
-                    
                 </div>
 
                 <div class="layer-box">
                     <div class="layer-title">2. Network Layer</div>
-                    
                 </div>
 
                 <div class="layer-box">
                     <div class="layer-title">3. Processing Layer</div>
-                    
                 </div>
 
                 <div class="layer-box">
                     <div class="layer-title">4. Application Layer</div>
-                    
                 </div>
             </div>
-            <br>
-            <img src="iot/delivery.webp"  style="max-width: 100%; height: auto;">
-            <br>
-            <img src="iot/storage.webp"  style="max-width: 100%; height: auto;">
+            
+
         </section>
 
     </div>
-
+            <img src="iot/iot2.webp" alt="Architecture Diagram 1">
+            <img src="iot/iot3.webp" alt="Architecture Diagram 2">
 </body>
 </html>

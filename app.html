@@ -15,6 +15,20 @@
             --bg-color: #f8faf9;
             --card-shadow: 0 8px 24px rgba(0,0,0,0.06);
         }
+        
+            header {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--water-blue);
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Replaced undefined variable */
+            /* Add your image path here. The linear-gradient creates a readable overlay */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(249, 251, 249, 0.80)), url('app/ap_title.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
         * {
             box-sizing: border-box;
@@ -40,24 +54,17 @@
         }
 
         /* Header Section */
-        header {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(135deg, var(--primary-green) 0%, #1b5e20 100%);
-            color: white;
-            border-radius: 12px 12px 0 0;
-            box-shadow: var(--card-shadow);
-        }
-
+        
         header h1 {
             font-size: 2.5rem;
+            color:#113E00;
             margin-bottom: 10px;
             letter-spacing: 1px;
         }
 
         header .subtitle {
             font-size: 1.2rem;
-            color: var(--light-green);
+            color: #12260B;
             font-weight: 500;
         }
 
@@ -222,7 +229,7 @@
         </section>
 
         <section class="capabilities-section">
-            <h2 class="section-title">Our Capabilities</h2>
+            <h2 class="section-title">Our Services</h2>
             <div class="grid-container">
                 
                 <div class="capability-card">

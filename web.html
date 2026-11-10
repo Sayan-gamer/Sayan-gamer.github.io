@@ -25,12 +25,22 @@
         }
 
         body {
-            background-color: var(--light-bg);
             color: var(--text-main);
             line-height: 1.6;
             padding: 20px;
-        }
-
+        
+    /* Fallback color in case the image takes a moment to load */
+    background-color: #1c2e0e; 
+    
+    /* Using your provided file name */
+    background-image: url('back01.webp');
+    
+    /* Repeats the image to fill the screen */
+    background-repeat: repeat; 
+    
+    /* Optional: If the image is large, you can use 'cover' instead of 'repeat' */
+    /* background-size: cover; */
+}
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -59,7 +69,7 @@
             flex-direction: column; /* Moves the image container below the text */
             gap: 30px;
             background: var(--card-bg);
-            padding: 3rem;
+            padding: 1rem;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
             box-shadow: var(--shadow);
             margin-bottom: 3rem;
@@ -116,6 +126,19 @@
             border: 2px solid #e1e8ed;
         }
 
+       img {
+            max-width: 95%; /* Ensures it doesn't break on small mobile screens */
+            width: 500px;    /* Sets the target width */
+            max-height: auto;
+            height: auto;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Replaced undefined variable */
+            transition: transform 0.3s ease;
+        }
+        
+
         .image-row-item img {
             width: 100%;
             height: auto; /* Keeps native aspect ratio */
@@ -147,12 +170,7 @@
             border-radius: 2px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-bottom: 3rem;
-        }
+      
 
         .service-card {
             background: var(--card-bg);
@@ -204,21 +222,11 @@
             <a href="#" class="book-now-btn">Book Service</a>
             </div>
             
-            <!-- 2 Images in 2 Rows (Stacked vertically) -->
-            <div class="image-rows-container">
-                <!-- Row 1 Image -->
-                <div class="image-row-item">
-                    <img src="web/web1.webp" alt="Web Development for FPOs">
-                </div>
-                <!-- Row 2 Image -->
-                <div class="image-row-item">
-                    <img src="web/web2.webp" alt="Digital Showcasing and E-Commerce">
-                </div>
-            </div>
+            
         </section>
 
         <h2 class="section-title">Our Services</h2>
-        <section class="services-grid">
+        
             <div class="service-card">
                 <h3>Custom Website Development</h3>
                 <p>Professional, mobile-responsive websites tailored to the identity and operational needs of FPOs, SHGs, and CHCs.</p>
@@ -238,7 +246,16 @@
                 <h3>Digital Marketing & Technical Support</h3>
                 <p>SEO, social media integration, website maintenance, and affordable technical assistance.</p>
             </div>
-        </section>
+            <div class="image-rows-container">
+                <!-- Row 1 Image -->
+                <div class="image-row-item">
+                    <img src="web/web1.webp" alt="Web Development for FPOs">
+                </div>
+                <!-- Row 2 Image -->
+                <div class="image-row-item">
+                    <img src="web/web2.webp" alt="Digital Showcasing and E-Commerce">
+                </div>
+            </div>
 
     </div>
 

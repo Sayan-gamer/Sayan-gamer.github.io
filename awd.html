@@ -7,7 +7,7 @@
     <style>
         :root {
             --primary: #2e7d32; 
-            --primary-light: #e8f5e9;
+            --primary-light: #3453F9;
             --dark: #1b5e20;
             --water-blue: #0288d1;
             --water-light: #e1f5fe;
@@ -19,8 +19,8 @@
         }
         
         p, li {
-  text-align: justify;
-}
+            text-align: justify;
+        }
 
         * {
             box-sizing: border-box;
@@ -32,7 +32,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background-color: var(--bg);
+            background-color: #2D7130;
             padding: 20px;
         }
 
@@ -41,11 +41,19 @@
             margin: 0 auto;
         }
 
+        /* --- MODIFIED HEADER WITH BACKGROUND IMAGE --- */
         header {
             text-align: center;
-            padding: 3rem 0 2rem;
-            border-bottom: 3px solid var(--water-blue);
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--water-blue);
             margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            /* Add your image path here. The linear-gradient creates a readable overlay */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(249, 251, 249, 0.80)), url('awd/top.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         h1 {
@@ -54,12 +62,14 @@
             letter-spacing: 1px;
             font-size: 2.5rem;
             margin-bottom: 10px;
+            position: relative; /* Keeps text above background */
         }
         
         .subtitle {
             color: var(--water-blue);
             font-size: 1.2rem;
             font-weight: 600;
+            position: relative;
         }
 
         h2 {
@@ -108,12 +118,13 @@
         }
 
         .awd-intro {
+			
             background-color: white;
             padding: 2rem;
             border-radius: 8px;
             border-top: 5px solid var(--water-blue);
             box-shadow: var(--card-shadow);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         /* Step Cards for Procedures */
@@ -123,6 +134,9 @@
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
+        .awd-intro h2 {
+    margin-top: 0;
+}
 
         .step-card {
             background: white;
@@ -258,7 +272,7 @@
             font-size: 0.95rem;
         }
         
-			.book-now-btn {
+        .book-now-btn {
             display: table; /* Forces block-level behavior but keeps it tightly wrapped around the text */
             margin: 20px auto 0; /* 'auto' on left and right automatically centers it */
             background-color: green;

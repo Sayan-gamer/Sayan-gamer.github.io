@@ -24,6 +24,30 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--water-blue);
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            /* Add your image path here. The linear-gradient creates a readable overlay */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.20), rgba(249, 251, 249, 0.80)), url('waste/back.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        
+     img {
+        max-width: 500px;
+    height: auto;
+    display: block;  /* Forces the image to behave like a block element */
+    margin: 0 auto;  /* Centers the block by applying equal left and right margins */
+    border-radius: 4px;
+}
+
+        
         p, span {
             text-align: justify;
         }
@@ -41,14 +65,6 @@
         }
 
         /* Hero Header */
-        header {
-            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
-            color: white;
-            padding: 3.5rem 2rem;
-            text-align: center;
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-            box-shadow: var(--card-shadow);
-        }
 
         header h1 {
             font-size: 2.2rem;
@@ -58,7 +74,7 @@
         }
 
         header .subtitle {
-            color: #c8e6c9;
+            color: #381E1E;
             font-size: 1.2rem;
             font-weight: 500;
         }
@@ -129,7 +145,7 @@
         /* SINGLE Image styles for the capability cards */
         .capability-card > img {
             width: 100%;
-            height: 300px;
+            height: 95%;
             object-fit: cover;
             border-radius: 8px;
             margin-top: 20px;
@@ -323,11 +339,11 @@
                 <h3>Circular Bioeconomy Solutions</h3>
                 <p>Establishment of resource recovery and utilisation pathways that transform agricultural waste into commercially valuable products.</p>
                 <!-- Clustered Images wrapped in a grid -->
-                <div class="multi-img-grid">
+                
+                    
+                    
                     <img src="waste/4.webp" alt="Circular Bioeconomy Solutions">
-                    <img src="waste/5.webp" alt="Biomass Supply Chain Management">
-                    <img src="waste/6.webp" alt="Renewable Energy Applications">
-                </div>
+                
             </div>
             
             <div class="capability-card">
@@ -343,28 +359,16 @@
             <div class="capability-card">
                 <h3>Rural Enterprise & Women Empowerment</h3>
                 <p>Promoting SHG-led biomass processing, mushroom cultivation, handmade paper, and other village-level enterprises.</p>
+            <img src="waste/5.webp" alt="Rural Enterprise & Women Empowerment">
             </div>
             
-            <div class="capability-card">
-                <h3>Soil Health Restoration</h3>
-                <p>Transforming agricultural waste into biochar and organic compost to restore soil nutrients and promote long-term agricultural sustainability.</p>
-            </div>
-            
+
             <div class="capability-card">
                 <h3>Livestock Fodder Solutions</h3>
                 <p>Processing crop residues into nutrient-rich, easily digestible animal feed to support local livestock farming ecosystems.</p>
             </div>
             
-            <div class="capability-card">
-                <h3>Carbon Credit Integration</h3>
-                <p>Facilitating carbon credit certification for farmers adopting sustainable residue management, unlocking additional revenue streams.</p>
-                <!-- Clustered Images wrapped in a grid -->
-                <div class="multi-img-grid">
-                    <img src="waste/10.webp" alt="Carbon Credit Integration">
-                    <img src="waste/8.webp" alt="Soil Health Restoration">
-                    <img src="waste/7.webp" alt="Rural Enterprise & Women Empowerment">
-                </div>
-            </div>
+            
         </section>
 
         <section class="impact-section">
@@ -373,7 +377,7 @@
                 <li>
                     <strong>Reduction in Open-Field Burning</strong>
                     <span>Promoting alternative residue management pathways to minimise crop-residue burning and associated air pollution.</span>
-                    <img src="waste/9.webp" alt="Livestock Fodder Solutions">
+                    <img src="waste/6.webp" alt="Reduction in Open-Field Burning">
                 </li>
                 
                 <li>
