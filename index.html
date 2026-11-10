@@ -15,7 +15,14 @@
             --bg: #f9fbf9;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+
+        
+        body {
+  height: 440vh; /* Ensures the background covers the full viewport height */
+  margin: 0;
+  background: linear-gradient(#CFE3F1, #84A4E9); /* Warm Flame */
+   color: var(--text); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; 
+}
         
         /* Navbar - Desktop & Mobile Friendly */
         nav { 
@@ -73,7 +80,14 @@
         .section-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
 
         /* 1. Services Section (Slider) */
-        .services-section { padding: 4rem 0; background: var(--bg); }
+        .services-section { padding: 4rem 0; 
+      background-image: url('flow.webp');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+    } 
+        
         .slider-container { position: relative; width: 90%; max-width: 1400px; height: 60vh; margin: 0 auto; overflow: hidden; background: #000; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
         .slide { 
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -98,37 +112,79 @@
 
         /* 2. About Us Section */
         .about-section { padding: 4rem 5%; max-width: 90%; margin: 0 auto; text-align: center; }
+       
         .about-content { background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); text-align: justify; }
         .about-content p { font-size: 1.15rem; color: #555; margin-bottom: 1.5rem; }
         .about-content p:last-child { margin-bottom: 0; }
         
-        /* 3. Cost Cutting / Benefit Calculator */
-        .calculator-section { padding: 4rem 5%; background: #e8f5e9; }
-        .calc-wrapper { display: flex; justify-content: center; align-items: stretch; gap: 1.5rem; max-width: 1000px; margin: 0 auto; background: white; padding: .85rem; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
-        .calc-inputs { flex: 1; min-width: 220px; }
-        .calc-results { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 220px; }
         
-        .calc-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px dashed #eee; padding-bottom: 2px; }
-        .calc-row label { font-size: .95rem; font-weight: 600; color: #444; }
-        .calc-row input { width: 130px; padding: 2px; border: 1px solid #ccc; border-radius: 6px; font-size: .85rem; text-align: right; transition: 0.3s; }
-        .calc-row input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 5px rgba(46,125,50,0.3); }
-        .input-group-title { font-size: .9rem; color: var(--primary); margin-top: 10px; margin-bottom: 10px; border-bottom: 2px solid var(--primary-light); padding-bottom: 5px; }
+        /* Mission and Vision Styles */
+        .mission-vision-wrapper { padding: 2rem; margin-bottom: 2rem;justify-content: center; }
+        .mv-card { background: white; flex: 1; min-width: 300px; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); text-align: justify; border-bottom: 5px solid var(--primary); transition: transform 0.3s ease; }
+        .mv-card:hover { transform: translateY(-5px); }
+        .mv-card h3 { color: var(--dark); font-size: 1.6rem; text-align: center; margin-bottom: 1rem; letter-spacing: 1px; }
+        .mv-card p { font-size: 1.15rem; color: #555; margin-bottom: 1rem; }
+        .mv-card p:last-child { margin-bottom: 0; }
 
-        .calc-btn { width: 100%; padding: 10px; margin-top: 10px; background: var(--primary); color: white; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3); }
-        .calc-btn:hover { background: var(--dark); transform: translateY(-2px); }
-        
-        .total-box { padding: 30px; background: var(--bg); border: 2px dashed var(--primary-light); border-radius: 12px; height: 100%; display: flex; flex-direction: column; justify-content: center; }
-        .total-box h3 { color: var(--dark); font-size: 1.6rem; margin-bottom: 20px; text-align: center; }
-        
-        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e0e0e0; font-size: 1.1rem; }
-        .result-row:last-child { border-bottom: none; margin-top: 10px; font-size: 1.3rem; font-weight: bold; color: var(--primary); background: #e8f5e9; padding: 15px; border-radius: 8px; }
-        .result-row span.val { font-weight: bold; color: #333; }
-        
-        @media (max-width: 768px) {
-            .calc-wrapper { flex-direction: column; gap: 2rem; }
-            .total-box { min-height: 200px; }
+  .gallery-section h2 {
+            padding: 1rem 5%;
+            margin: 2rem;
         }
 
+        .image-row {
+            display: flex;
+            gap: 1.5%; /* Using percentage gap so spacing shrinks on mobile */
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .img-card {
+            flex: 1; /* Forces all 7 items to take exactly 1 equal share of the width */
+            display: flex;
+            justify-content: center;
+        }
+
+        .img-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 1 / 1; /* Keeps them as perfect squares */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover animation */
+        .img-card img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
+            border: 2px solid var(--primary-light);
+        }
+
+        /* Adjustments for very small screens */
+        @media (max-width: 600px) {
+            .image-row {
+                gap: 1%; /* Make the gap smaller on phones to give images more space */
+            }
+            .img-card img {
+                border-radius: 4px; /* Smaller rounded corners because the images will be tiny */
+            }
+        }
+        
+        
+        /*partner-conternt*/
+        
+        .partner-section { padding: 4rem 5%; max-width: 90%; margin: 0 auto; text-align: center; background: #82ABE0 }
+       
+        .partner-content { background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); text-align: justify; }
+        .partner-content p { font-size: 1.15rem; color: #555; margin-bottom: 1.5rem; }
+        .partner-content p:last-child { margin-bottom: 0; }
+        
+        
+       
         /* 4. App Showcase Section */
         .app-section { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); color: white; padding: 5rem 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 3rem; }
         .app-text { flex: 1; min-width: 300px; max-width: 600px; }
@@ -180,6 +236,32 @@
         
         /* Footer */
         footer { text-align: center; padding: 2rem; background: #111; color: #aaa; }
+        
+        /* --- 7 Images Gallery Section --- */
+        /* --- 7 Images Gallery Section (Always 7 in a row) --- */
+        .gallery-section {
+            padding: 1rem 5%;
+            background-color: var(--bg);
+            text-align: center;
+        color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        
+    /* Fallback color in case the image takes a moment to load */
+    background-color: #1c2e0e; 
+    
+    /* Using your provided file name */
+    background-image: url('back02.webp');
+    
+    /* Repeats the image to fill the screen */
+    background-repeat: repeat; 
+    
+    /* Optional: If the image is large, you can use 'cover' instead of 'repeat' */
+    /* background-size: cover; */
+}
+        
+
+        
     </style>
 </head>
 <body id="home">
@@ -199,7 +281,7 @@
     <a href="cold.html">Cold Storage</a>
   </div>
 </div>
-            <a href="#calculator">Cost Benefit Calculator</a>
+            
             <a href="#about">About Us</a>
             <a href="#contact">Contact Us</a>
             <a href="#login" class="login-btn">Login / Register</a>
@@ -253,10 +335,17 @@
     </div>
     
     <!-- Slide 4 -->
-    <div class="slide" style="background-image: url('images/5th.webp');" onclick="window.location.href='cold.html'">
+    <div class="slide" style="background-image: url('images/5th.webp');" onclick="window.location.href='silo.html'">
         <div class="slide-content">
             <h2>Rice silo design</h2>
             <p>Focuses on designing affordable, modern and energy-efficient rice storage silos to ensure safe bulk storage and minimise post-harvest losses.</p>
+        </div>
+    </div>
+    
+    <div class="slide" style="background-image: url('images/7th.webp');" onclick="window.location.href='cold.html'">
+        <div class="slide-content">
+            <h2>Cold Storage</h2>
+            <p>Store perishable food products at an optimum temperature to enhance the shelf-life of the products.</p>
         </div>
     </div>
     
@@ -278,103 +367,73 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
                 <span class="dot" onclick="currentSlide(4)"></span>
                 <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
             </div>
         </div>
     </section>
 
     <!-- 2. About Us Section -->
-    <section class="about-section" id="about">
+       <section class="about-section" id="about">
         <h2 class="section-title">About Us</h2>
+        <h2 style="color: white; font-size: 32px; padding: 2rem 5%; max-width: 90%; margin: 0 auto; text-align: center; margin-bottom: 1.5rem;">Connecting People, Nature, and Technology to Drive Global Sustainability</h2>
+        
         <div class="about-content">
             <p><strong>KRISHI PRAKRITI</strong> is an Agri-Tech initiative, we are committed to transforming the agricultural sector through innovative technologies, sustainable farming practices, and affordable digital solutions.</p>
             <p>We work across multiple areas of agricultural development, including sustainable rice cultivation, agricultural waste management, carbon project development, drone technology, IoT-based monitoring, post-harvest management, cold storage design, and digital solutions for agricultural organizations.</p>
+        </div>
+
+    </section>
+
+	<section class="partner-section" id="partner">
+        <h2 class="section-title">PARTNER WITH US</h2>
+        <h2 style="color: white; font-size: 32px; padding: 2rem 5%; max-width: 90%; margin: 0 auto; text-align: center; margin-bottom: 1.5rem;">Let's Collaborate to Create a Sustainable Agricultural Future.</h2>
+        <div class="partner-content">
+			
+            <p>At  <strong>KRISHI PRAKRITI</strong>, we believe that collaboration is the foundation of innovation and sustainable development. We welcome partnerships with organizations, institutions, businesses, investors, researchers, and individuals who share our vision of transforming agriculture through technology, sustainability, and inclusive growth.</p>
+            <p>We are committed to building strong partnerships that turn innovative ideas into practical solutions, create economic opportunities for rural communities, empower farmers, and contribute to global sustainability.</p>
             
         </div>
     </section>
+
+<section class="gallery-section" id="gallery">
+        <!-- NEW MISSION & VISION CARDS -->
+        <div class="mission-vision-wrapper">
+            <!-- Mission Card -->
+            <div class="mv-card">
+                <h3>Our Mission</h3>
+                <p>Our mission goes beyond transforming agriculture; it is about transforming lives, restoring our relationship with nature, and creating a sustainable future for generations to come.</p>
+                <p>Through innovation, collaboration, and collective action, we strive to turn today's agricultural challenges into tomorrow's opportunities, making sustainability not just a global goal, but a reality on the ground.</p>
+            </div>
+            <br>
+            <!-- Vision Card -->
+            <div class="mv-card">
+                <h3>Our Vision</h3>
+                <p style="font-size: 1.15rem; color: var(--dark-text); font-style: italic;">"To build a sustainable, technology-enabled, and economically inclusive agricultural ecosystem. We envision a future where innovation reaches every farmer and rural community, natural resources are responsibly managed, agricultural emissions are reduced, and economic opportunities are accessible to all.</p>
+                <p style="font-size: 1.15rem; color: var(--dark-text); font-style: italic;" >Our vision is to translate the United Nations Sustainable Development Goals (SDGs) into meaningful, measurable action through innovative agricultural initiatives that empower communities, protect the environment, and build a more sustainable globe."</p>
+            
+    
+        <h3 style="color: black">Contributing to the UN Sustainable Development Goals</h3>
+        
+        
+        <div class="image-row">
+            <div class="img-card"><img src="pics/Picture1.png" alt="Image 1"></div>
+            <div class="img-card"><img src="pics/Picture2.png" alt="Image 2"></div>
+            <div class="img-card"><img src="pics/Picture3.png" alt="Image 3"></div>
+            <div class="img-card"><img src="pics/Picture4.png" alt="Image 4"></div>
+            <div class="img-card"><img src="pics/Picture5.png" alt="Image 5"></div>
+            <div class="img-card"><img src="pics/Picture6.png" alt="Image 6"></div>
+            <div class="img-card"><img src="pics/Picture7.png" alt="Image 7"></div>
+        </div>
+    </section>
+            
+            </div>
+            
+        </div>
+        
+        <!-- 7 Images Gallery Section -->
 
     <!-- 3. Cost Cutting / Cost Benefit Calculator -->
-    <section class="calculator-section" id="calculator">
-        <h2 class="section-title">Cost Benefit Calculator</h2>
-        <div class="calc-wrapper">
-            
-            <!-- Left Side: Input Values -->
-            <div class="calc-inputs">
-                <div class="input-group-title">Farm Details</div>
-                <div class="calc-row">
-                    <label for="area">Farm Area (Acres)</label>
-                    <input type="number" id="area" placeholder="1" min="0.1" step="0.1" value="1" oninput="calculateExpenditure()">
-                </div>
-                
-                <div class="input-group-title">Expenditure</div>
-                <div class="calc-row">
-                    <label for="seedling">Seedling Cost</label>
-                    <input type="number" id="seedling" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-                <div class="calc-row">
-                    <label for="tillage">Tillage Cost</label>
-                    <input type="number" id="tillage" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-                <div class="calc-row">
-                    <label for="pest">Pesticide & Fertilizer Cost</label>
-                    <input type="number" id="pest" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-                <div class="calc-row">
-                    <label for="irrigation">Irrigation Cost</label>
-                    <input type="number" id="irrigation" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-                <div class="calc-row">
-                    <label for="harvest">Harvesting Cost</label>
-                    <input type="number" id="harvest" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-                <div class="calc-row">
-                    <label for="manpower">Manpower Cost</label>
-                    <input type="number" id="manpower" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-
-                <div class="input-group-title">Income</div>
-                <div class="calc-row">
-                    <label for="pricePerKg">Selling Price of Product (per kg)</label>
-                    <input type="number" id="pricePerKg" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-                <div class="calc-row" style="border-bottom: none;">
-                    <label for="yieldPerAcre">Produced amount (kg) per acre</label>
-                    <input type="number" id="yieldPerAcre" placeholder="0" min="0" oninput="calculateExpenditure()">
-                </div>
-                
-                <button class="calc-btn" onclick="calculateExpenditure()">Calculate Analytics</button>
-            </div>
-            
-            <!-- Right Side: Calculated Analytics Output -->
-            <div class="calc-results">
-                <div class="total-box">
-                    <h3>Financial Analytics</h3>
-                    
-                    <div class="result-row">
-                        <span>Total Expenditure:</span>
-                        <span class="val">₹ <span id="total-output">0.00</span></span>
-                    </div>
-                    <div class="result-row">
-                        <span>Total Revenue:</span>
-                        <span class="val">₹ <span id="rev-output">0.00</span></span>
-                    </div>
-                    <div class="result-row">
-                        <span>Net Profit:</span>
-                        <span class="val" style="color: var(--primary);">₹ <span id="net-profit">0.00</span></span>
-                    </div>
-                    <div class="result-row">
-                        <span>Cost-Benefit Ratio (CBR):</span>
-                        <span class="val"><span id="cbr-output">0.00</span></span>
-                    </div>
-                    <div class="result-row">
-                        <span>Net Profit Per Acre:</span>
-                        <span class="val">₹ <span id="profit-acre-output">0.00</span></span>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
+    
     <!-- 4. App Showcase Section -->
     <section class="app-section" id="app">
         <div class="app-text">
@@ -436,41 +495,7 @@
             console.log("Language switched to: " + lang);
         }
 
-        // --- Calculator Logic ---
-        function calculateExpenditure() {
-            // Get Input Values
-            const area = parseFloat(document.getElementById('area').value) || 1; // Default to 1 to avoid NaN
-            const seedling = parseFloat(document.getElementById('seedling').value) || 0;
-            const tillage = parseFloat(document.getElementById('tillage').value) || 0;
-            const pest = parseFloat(document.getElementById('pest').value) || 0;
-            const irrigation = parseFloat(document.getElementById('irrigation').value) || 0;
-            const harvest = parseFloat(document.getElementById('harvest').value) || 0;
-            const manpower = parseFloat(document.getElementById('manpower').value) || 0;
-            
-            // New Yield and Pricing Inputs
-            const pricePerKg = parseFloat(document.getElementById('pricePerKg').value) || 0;
-            const yieldPerAcre = parseFloat(document.getElementById('yieldPerAcre').value) || 0;
-            
-            // Perform Calculations
-            const totalExpenditure = seedling + tillage + pest + irrigation + harvest + manpower;
-            
-            // Revenue is now calculated dynamically from Yield and Price/kg
-            const totalYieldKg = area * yieldPerAcre;
-            const revenue = totalYieldKg * pricePerKg; 
-            
-            const netProfit = revenue - totalExpenditure;
-            const profitPerAcre = netProfit / area;
-            
-            // CBR formula: Total Benefits (Revenue) / Total Costs
-            const cbr = totalExpenditure > 0 ? (revenue / totalExpenditure) : 0;
-            
-            // Update Output Fields
-            document.getElementById('total-output').innerText = totalExpenditure.toFixed(2);
-            document.getElementById('rev-output').innerText = revenue.toFixed(2);
-            document.getElementById('net-profit').innerText = netProfit.toFixed(2);
-            document.getElementById('cbr-output').innerText = cbr.toFixed(2) + " : 1";
-            document.getElementById('profit-acre-output').innerText = profitPerAcre.toFixed(2);
-        }
+       
     </script>
 </body>
 </html>
