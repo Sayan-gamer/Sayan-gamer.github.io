@@ -235,7 +235,7 @@
 }
         
         /* Footer */
-        footer { text-align: center; padding: 2rem; background: #111; color: #aaa; }
+        
         
         /* --- 7 Images Gallery Section --- */
         /* --- 7 Images Gallery Section (Always 7 in a row) --- */
@@ -260,7 +260,64 @@
     /* background-size: cover; */
 }
         
-
+/* Enhanced Footer & Contact Us */
+        .site-footer {
+            background: #111;
+            color: #ddd;
+            padding: 4rem 5% 1.5rem;
+            margin-top: 0rem;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2rem;
+        }
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-section h3 {
+            color: var(--primary-light);
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-section p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #aaa;
+        }
+        .footer-section ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: var(--primary-light);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            color: #777;
+            font-size: 0.95rem;
+        }
         
     </style>
 </head>
@@ -464,11 +521,53 @@
         </div>
     </section>
 
-    <footer id="contact">
-        <p>&copy; 2026 Krishi Prakriti. Contact Us +999.</p>
+<footer id="contact" class="site-footer">
+        <div class="footer-container">
+            <!-- Brand & About -->
+            <div class="footer-section">
+                <h3>Krishi Prakriti</h3>
+                <p>Transforming the agricultural sector through innovative technologies, sustainable farming practices, and affordable digital solutions.</p>
+            </div>
+            
+            <!-- Quick Links & Services -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <!-- Optional: add 'style="column-count: 2; column-gap: 20px;"' to this <ul> if you want the list split into two side-by-side columns -->
+                <ul style="column-count: 2; column-gap: 20px;">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#gallery">Sustainability Goals</a></li>
+                    <li><a href="awd.html">AWD</a></li>
+                    <li><a href="waste.html">Agricultural Waste Management</a></li>
+                    <li><a href="app.html">Crop Health Monitoring</a></li>
+                    <li><a href="iot.html">Post-Harvest Technology</a></li>
+                    <li><a href="drone.html">Drone Services</a></li>
+                    <li><a href="silo.html">Rice Silo Design</a></li>
+                    <li><a href="cold.html">Cold Storage</a></li>
+                    <li><a href="web.html">Web Development</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Details -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>📍 Indian Institute of Technology Kharagpur, West Bengal</li>
+                    <li>📞 +91 99999 99999</li>
+                    <li>✉️ info@krishiprakriti.com</li>
+                    <li>🌐 www.krishiprakriti.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© 2026 Krishi Prakriti. All rights reserved.</p>
+        </div>
     </footer>
-
-    <script>
+    
+    
+        <script>
         // --- Slider Logic ---
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
