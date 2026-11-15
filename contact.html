@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Krishi Prakriti</title>
+    <style>
+        /* Base & Reset (Matching your main theme) */
+        :root {
+            --primary: #2e7d32; 
+            --primary-light: #60ad5e;
+            --dark: #1b5e20;
+            --text: #333;
+            --bg: #f9fbf9;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body {
+            background: linear-gradient(#CFE3F1, #84A4E9); 
+            color: var(--text); 
+            line-height: 1.6; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        nav { background: #fff; padding: 1rem 5%; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .heading1 { color: var(--primary); padding-right: 2rem; font-size: 1.8rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; white-space: nowrap; margin: 0; }
+        .nav-links { display: flex; gap: 1rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; font-size: 1rem; white-space: nowrap; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Contact Page Specific Styles */
+        .contact-header {
+            background-image: url('flow.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .contact-header::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1;
+        }
+        .contact-header-content { position: relative; z-index: 2; }
+        .contact-header h1 { font-size: 3rem; margin-bottom: 10px; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px;}
+        .contact-header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: #e8f5e9; }
+
+        .contact-container {
+            flex: 1;
+            padding: 4rem 5%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .contact-form-wrapper {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .contact-form-wrapper h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fdfdfd;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+            background: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .form-row { flex-direction: column; gap: 0; }
+            .form-group { margin-bottom: 1.5rem; }
+        }
+
+        /* Footer (Minimal version to match your existing one) */
+        .site-footer { background: #111; color: #ddd; padding: 2rem 5%; text-align: center; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1 class="heading1">Krishi Prakriti</h1>
+        <div class="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="contact.html" style="color: var(--primary);">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="contact-header">
+        <div class="contact-header-content">
+            <h1>Get in Touch</h1>
+            <p>Whether you want to book a service or partner with us for a sustainable agricultural future, we would love to hear from you.</p>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <main class="contact-container">
+        <div class="contact-form-wrapper">
+            <h2>Send us a Message</h2>
+            
+            <!-- Replace "YOUR_ENDPOINT_HERE" with your server URL or Formspree link -->
+            <form action="/submit-contact" method="POST">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="purpose">Purpose of Inquiry *</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="Book a Service">Book a Service</option>
+                            <option value="Partner with Us">Partner with Us</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Interested Service</label>
+                        <select id="service" name="service">
+                            <option value="None">Not Applicable</option>
+                            <option value="AWD Implementation">Alternate Wetting and Drying (AWD)</option>
+                            <option value="Crop Health App">Crop Health Monitoring App</option>
+                            <option value="Drone Services">Drone Spraying Services</option>
+                            <option value="Cold Storage">Cold Storage Design</option>
+                            <option value="Web Development">Web Development for FPOs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company / organization Name (Optional)</label>
+                        <input type="text" id="company" name="company" placeholder="Enter your organization name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Contact Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" placeholder="Please provide more details about your request or partnership proposal..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 Krishi Prakriti. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -186,27 +186,73 @@
         
        
         /* 4. App Showcase Section */
-        .app-section { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); color: white; padding: 5rem 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 3rem; }
+        .app-section { background-image: url('flow.webp');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+       color: white; padding: 5rem 5%;
+        display: flex; align-items: center;
+         justify-content: space-between; 
+         flex-wrap: wrap; gap: 3rem; }
+         
         .app-text { flex: 1; min-width: 300px; max-width: 600px; }
         .app-text h2 { font-size: 2.8rem; margin-bottom: 1.2rem; line-height: 1.2; }
         .app-text p { font-size: 1.1rem; margin-bottom: 2rem; color: #e8f5e9; }
         .app-features { list-style: none; margin-bottom: 2.5rem; }
-        .app-features li { margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 12px; font-size: 1.05rem; }
-        .app-features li::before { content: '✓'; color: #81c784; font-weight: bold; font-size: 1.3rem; }
-        .download-btn { display: inline-block; padding: 14px 35px; background: white; color: var(--primary); text-decoration: none; font-weight: bold; border-radius: 30px; transition: all 0.3s; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .app-features li { 
+    margin-bottom: 1.2rem; 
+    display: flex; 
+    align-items: flex-start; 
+    gap: 12px; 
+    font-size: 1.05rem; 
+}
+
+.app-features li::before { 
+    content: '✓'; 
+    color: #FFFFFF; 
+    font-weight: bold; 
+    font-size: 1.3rem; 
+    flex-shrink: 0; /* Prevents the checkmark from shrinking */
+    margin-top: -2px; /* Vertically aligns the checkmark with the first line of text */
+}
+
+.app-features li strong {
+    flex-shrink: 0; /* Prevents the bold title from wrapping awkwardly */
+    width: 150px; /* Prevents the bold title from wrapping awkwardly */
+    /*max-width: 300px;  Ensures the title doesn't consume too much space on mobile screens */
+}
+
+.app-features li span {
+    flex: 1; /* Forces the description text into its own clean column block */
+}
+.download-btn { display: inline-block; padding: 14px 35px; background: white; color: var(--primary); text-decoration: none; font-weight: bold; border-radius: 30px; transition: all 0.3s; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .download-btn:hover { background: #e8f5e9; transform: translateY(-3px); }
         
         /* CSS Phone Mockup */
         .app-visual { flex: 1; min-width: 300px; display: flex; justify-content: center; }
         .phone-mockup { width: 280px; height: 560px; background: #111; border-radius: 40px; border: 14px solid #222; position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 25px; background: #222; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; z-index: 10; }
-        .phone-screen { width: 100%; height: 100%; background: #f4f6f4; color: #333; padding: 40px 20px 20px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
-        .mock-header { font-weight: bold; color: var(--primary); margin-bottom: 30px; font-size: 1.4rem; letter-spacing: 1px; }
-        .mock-camera-view { background: #e0e0e0; height: 220px; border-radius: 10px; position: relative; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .mock-leaf { width: 120px; height: 120px; background: var(--primary-light); border-radius: 50% 0 50% 50%; transform: rotate(15deg); }
-        .bounding-box { width: 100px; height: 100px; border: 2px dashed #d32f2f; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(211, 47, 47, 0.1); }
-        .mock-result { background: #ffebee; color: #c62828; padding: 15px; border-radius: 8px; font-size: 0.95rem; border-left: 4px solid #c62828; }
-        
+        /* Update the existing phone-screen class */
+.phone-screen { 
+    width: 100%; 
+    height: 100%; 
+    background: #000; 
+    padding-top: 25px; /* Leaves space at the top so the notch doesn't overlap your image */
+    display: flex; 
+    overflow: hidden; 
+}
+
+
+/* Add this new class to format your image perfectly inside the phone */
+.app-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the screenshot fills the screen without stretching */
+    object-position: top center; /* Anchors the screenshot to the top */
+    border-bottom-left-radius: 25px; /* Rounds the bottom corners to match the phone frame */
+    border-bottom-right-radius: 25px;
+}
         .dropdown-content {
   display: none; /* Hidden by default */
   position: absolute;
@@ -232,6 +278,141 @@
 /* 5. Reveal the dropdown menu when hovering over the parent container */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+/* AWD Section with Parallax Background */
+.awd-section {
+    background-image: url('awdback.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding:  2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Update existing awd-content to be slightly wider for the 2-column layout */
+.awd-content {
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    max-width: 95%; /* Increased from 800px */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Impact Section Layout */
+.impact-section {
+    display: flex;
+    background: linear-gradient(#1F3C4E, #294F60);
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle divider line */
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    text-align: left;
+    gap: 3rem;
+}
+
+.impact-left {
+    flex: 1;
+}
+
+.impact-left h3 {
+	padding: 2rem;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #ffffff;
+    text-transform: none; /* Keeps it sentence case like the image */
+    letter-spacing: 0;
+}
+
+.impact-right {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 Grid */
+    gap: 2.5rem;
+}
+
+.impact-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.impact-icon {
+    width: 70px; /* Slightly larger to fit the detailed icons nicely */
+    height: 70px;
+    background: #849c63; /* Olive green background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px; /* Increased from 4px for smooth rounded corners */
+    overflow: hidden; /* Ensures the image inside respects the rounded corners */
+    margin-bottom: 15px;
+    font-size: 2rem; 
+    color: white;
+}
+
+/* If you want the icons to be perfect circles instead of rounded squares, change border-radius to 50% */
+
+.impact-num {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #29b6f6; /* Bright blue from your reference image */
+    margin: 5px 0;
+    line-height: 1;
+}
+
+.impact-text {
+    font-size: 0.95rem;
+    color: #e8f5e9;
+    line-height: 1.4;
+    text-indent: 0; /* Prevents global p indent from breaking alignment */
+    text-align: center; /* Keeps grid text centered */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .impact-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .impact-left h3 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    .impact-right {
+        grid-template-columns: 1fr 1fr; /* Keep 2 columns on tablets */
+    }
+}
+
+@media (max-width: 500px) {
+    .impact-right {
+        grid-template-columns: 1fr; /* Stack vertically on small phones */
+    }
+}
+
+.awd-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.awd-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #e8f5e9;
+    text-align: justify; /* Spreads text evenly across the container */
+    margin-top: 1.15rem;
 }
         
         /* Footer */
@@ -340,7 +521,7 @@
 </div>
             
             <a href="#about">About Us</a>
-            <a href="#contact">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
             <a href="#login" class="login-btn">Login / Register</a>
             
             <div class="lang-selector">
@@ -489,35 +670,82 @@
         
         <!-- 7 Images Gallery Section -->
 
-    <!-- 3. Cost Cutting / Cost Benefit Calculator -->
+    <!-- Awd -->
+    
+    <!-- AWD Section -->
+<section class="awd-section" id="awd">
+    <div class="awd-content">
+        <h2>Alternate Wetting and Drying (AWD)</h2>
+        <p>Alternate Wetting and Drying (AWD)
+KRISHI PRAKRITI promotes <Strong>Alternate Wetting and Drying (AWD)</Strong>, a climate-smart rice cultivation technique that conserves water, reduces methane emissions, and minimizes the environmental footprint of paddy farming.</p>
+<p>By optimizing irrigation practices and avoiding continuous flooding, AWD helps conserve valuable water resources, reduce greenhouse gas emissions, improve water-use efficiency, and strengthen climate resilience.</p>
+<p>Through farmer engagement and sustainable field practices, we aim to transform rice cultivation into a more resource-efficient and climate-friendly agricultural system while creating opportunities for high-integrity carbon credits and additional farmer income.</p>
+        <!-- You can add more AWD details, lists, or buttons here -->
+    <div class="impact-section">
+            <div class="impact-left">
+                <h3>Environmental and<br>social impacts</h3>
+            </div>
+            <div class="impact-right">
+                <!-- Stat 1 -->
+                <div class="impact-card">
+                    <div class="impact-icon"><img src="pics/awd1.png" alt="GHG" style="width: 100%;"></div>
+                    <div class="impact-num">0.1M</div>
+                    <div class="impact-text">tonnes of GHG<br>reductions/year<br>Will happen</div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="impact-card">
+                    <div class="impact-icon"><img src="pics/awd2.png" alt="Water" style="width: 100%;"></div>
+                    <div class="impact-num">4B</div>
+                    <div class="impact-text">liters of water will<br>save/1000ha/season</div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="impact-card">
+                    <div class="impact-icon"><img src="pics/awd3.png" alt="Youth" style="width: 100%;"></div>
+                    <div class="impact-num">1K+</div>
+                    <div class="impact-text">youth<br>employment/10000ha</div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="impact-card">
+                    <div class="impact-icon"><img src="pics/awd4.png" alt="Women" style="width: 100%;"></div>
+                    <div class="impact-num">100+</div>
+                    <div class="impact-text">women<br>empowerment/1000ha</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
     
     <!-- 4. App Showcase Section -->
     <section class="app-section" id="app">
         <div class="app-text">
             <h2>Instant Crop Disease Detection</h2>
-            <p>Diagnose crop health in seconds. Our flagship mobile application analyzes leaf imagery in real-time to identify blights, mildews, and bacterial infections before they spread across your harvest.</p>
+            <p>Identify crop diseases early and make smarter crop management decisions with KRISHI PRAKRITI’s AI-powered mobile application. Our intelligent crop health monitoring system analyses images of crop leaves to detect potential diseases, identify symptoms, and recommend suitable management practices, helping farmers protect their crops and minimize yield losses.</p>
             <ul class="app-features">
-                <li><strong>On-Device Inference:</strong> Powered by lightweight YOLO models and TFLite for lightning-fast analysis—no active internet connection required.</li>
-                <li><strong>High Accuracy Screening:</strong> Extensively trained on localized datasets to catch diseases like Alternaria, Powdery Mildew, and Bacterial Wilt.</li>
-                <li><strong>Accessible UI:</strong> An intuitive, multi-language interface built to be operated seamlessly directly in the field.</li>
-            </ul>
+    <li>
+        <strong>Instant Disease Detection:</strong>  
+        <span>AI/ML-powered image analysis enables farmers to identify crop diseases and abnormalities quickly using smartphone images.</span>
+    </li>
+    <li>
+        <strong>AI-Based Diagnosis:</strong> 
+        <span>Trained on crop-specific datasets to recognize common diseases, including Alternaria, Powdery Mildew, Bacterial Wilt, and other major crop infections.</span>
+    </li>
+    <li>
+        <strong>Smart Treatment Recommendations:</strong> 
+        <span>Provides disease-specific remedies and crop management suggestions to support timely and informed decision-making.</span>
+    </li>
+</ul>
             <a href="#download" class="download-btn">Explore App Features</a>
         </div>
         
         <div class="app-visual">
             <div class="phone-mockup">
-                <div class="phone-notch"></div>
-                <div class="phone-screen">
-                    <div class="mock-header">Image Scanner</div>
-                    <div class="mock-camera-view">
-                        <div class="mock-leaf"></div>
-                        <div class="bounding-box"></div>
-                    </div>
-                    <div class="mock-result">
-                        <strong>Diagnosis Complete:</strong><br>Alternaria Detected<br><span style="font-size: 0.85rem; color: #7f0000;">Confidence: 99.5%</span>
-                    </div>
-                </div>
-            </div>
+    <div class="phone-notch"></div>
+    <div class="phone-screen">
+        <!-- Add your actual screenshot image path to the src attribute -->
+        <img src="appimg.webp" alt="Krishi Prakriti App Screenshot" class="app-screenshot">
+    </div>
+</div>
         </div>
     </section>
 
