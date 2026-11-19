@@ -1,48 +1,66 @@
-import { put } from '@vercel/blob';
+import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-    if (req.method === 'POST') {
-        try {
-            const { purpose, service, name, company, email, phone, message } = req.body;
-            
-            console.log("Processing submission for:", name);
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, error: 'Method not allowed' });
+  }
 
-            // 1. Format the data you want to save
-            const submissionData = {
-                timestamp: new Date().toISOString(),
-                purpose,
-                service,
-                name,
-                company,
-                email,
-                phone,
-                message
-            };
+  const { purpose, service, name, company, email, phone, message } = req.body;
 
-            // 2. Create a unique filename using the current time
-            // Example: submissions/contact-1731789452000.json
-            const filename = `submissions/contact-${Date.now()}.json`;
+  if (!purpose || !name || !email || !phone || !message) {
+    return res.status(400).json({ success: false, error: 'Please fill in all required fields.' });
+  }
 
-            // 3. Convert the data to a formatted JSON string
-            const fileContent = JSON.stringify(submissionData, null, 2);
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 
-            // 4. Upload to Vercel Blob
-            const blob = await put(filename, fileContent, {
-                access: 'public', // Makes the file accessible via a URL
-                addRandomSuffix: true // Adds extra random characters so filenames never clash
-            });
+  try {
+    // 1. Email sent to your inbox (Reply-To goes directly to the visitor)
+    await transporter.sendMail({
+      from: `"Krishi Prakriti Website" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
+      subject: `[${purpose}] New Inquiry from ${name}`,
+      text: [
+        `Purpose: ${purpose}`,
+        `Service: ${service || 'None'}`,
+        `Name: ${name}`,
+        `Company/Org: ${company || 'N/A'}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        ``,
+        `Message:`,
+        message,
+      ].join('\n'),
+    });
 
-            console.log("Successfully saved to Blob:", blob.url);
-            
-            // 5. Send success back to HTML
-            return res.status(200).json({ success: true, url: blob.url });
+    // 2. Confirmation email sent to the email address the person provided
+    await transporter.sendMail({
+      from: `"Krishi Prakriti" <${process.env.EMAIL_USER}>`,
+      to: email,
+      subject: 'We received your inquiry - Krishi Prakriti',
+      text: [
+        `Hi ${name},`,
+        ``,
+        `Thank you for contacting Krishi Prakriti. We have received your inquiry regarding "${purpose}" and will get back to you shortly.`,
+        ``,
+        `Summary of your request:`,
+        `Service: ${service || 'Not Applicable'}`,
+        `Message: ${message}`,
+        ``,
+        `Best regards,`,
+        `Team Krishi Prakriti`,
+      ].join('\n'),
+    });
 
-        } catch (error) {
-            console.error("Blob upload error:", error);
-            return res.status(500).json({ success: false, error: "Server error" });
-        }
-    } else {
-        res.setHeader('Allow', ['POST']);
-        return res.status(405).end(`Method ${req.method} Not Allowed`);
-    }
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Email sending failed:', error);
+    return res.status(500).json({ success: false, error: 'Failed to send email. Please try again later.' });
+  }
 }

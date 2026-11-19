@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Krishi Prakriti</title>
     <style>
-        /* Base & Reset (Matching your main theme) */
+        /* Base & Reset */
         :root {
             --primary: #2e7d32; 
             --primary-light: #60ad5e;
@@ -136,6 +136,13 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
         }
+        
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -143,7 +150,7 @@
             .form-group { margin-bottom: 1.5rem; }
         }
 
-        /* Footer (Minimal version to match your existing one) */
+        /* Footer */
         .site-footer { background: #111; color: #ddd; padding: 2rem 5%; text-align: center; margin-top: auto; }
     </style>
 </head>
@@ -172,9 +179,7 @@
         <div class="contact-form-wrapper">
             <h2>Send us a Message</h2>
             
-            <!-- Replace "YOUR_ENDPOINT_HERE" with your server URL or Formspree link -->
-            <form action="/submit-contact" method="POST">
-                
+            <form id="krishiContactForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="purpose">Purpose of Inquiry *</label>
@@ -204,7 +209,7 @@
                         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                     </div>
                     <div class="form-group">
-                        <label for="company">Company / organization Name (Optional)</label>
+                        <label for="company">Company / Organization Name (Optional)</label>
                         <input type="text" id="company" name="company" placeholder="Enter your organization name">
                     </div>
                 </div>
@@ -235,5 +240,50 @@
         <p>© 2026 Krishi Prakriti. All rights reserved.</p>
     </footer>
 
+    <!-- Form Submission Script -->
+    <script>
+        document.getElementById('krishiContactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerText;
+            
+            submitBtn.innerText = 'Submitting...';
+            submitBtn.disabled = true;
+
+            const formData = {
+                purpose: document.getElementById('purpose').value,
+                service: document.getElementById('service').value,
+                name: document.getElementById('name').value.trim(),
+                company: document.getElementById('company').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                message: document.getElementById('message').value.trim()
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json().catch(() => ({}));
+
+                if (response.ok && result.success) {
+                    window.location.href = 'success.html';
+                } else {
+                    alert(result.error || "Something went wrong on the server. Please try again.");
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error("Submission Error:", error);
+                alert("Network error. Please check your connection and try again.");
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>

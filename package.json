@@ -1,0 +1,9 @@
+{
+	"name": "krishi-prakriti",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "nodemailer": "^6.9.16" ,
+    "@vercel/blob": "^0.26.0"
+  }
+}
