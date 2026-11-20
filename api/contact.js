@@ -1,4 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,19 +13,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ success: false, error: 'Please fill in all required fields.' });
   }
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
-
   try {
     // 1. Email sent to your inbox (Reply-To goes directly to the visitor)
-    await transporter.sendMail({
-      from: `"Krishi Prakriti Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+    const { error: adminError } = await resend.emails.send({
+      from: 'Krishi Prakriti Website <onboarding@resend.dev>',
+      to: [process.env.CONTACT_EMAIL],
       replyTo: email,
       subject: `[${purpose}] New Inquiry from ${name}`,
       text: [
@@ -39,10 +33,20 @@ export default async function handler(req, res) {
       ].join('\n'),
     });
 
-    // 2. Confirmation email sent to the email address the person provided
-    await transporter.sendMail({
-      from: `"Krishi Prakriti" <${process.env.EMAIL_USER}>`,
-      to: email,
+    if (adminError) {
+      console.error('Resend error:', adminError);
+      return res.status(500).json({ success: false, error: 'Failed to send email. Please try again later.' });
+    }
+
+    /*
+    // 2. Confirmation email to the visitor
+    // NOTE: Uncomment this ONLY after you verify your own custom domain in Resend
+    // and replace "onboarding@resend.dev" with your domain email (e.g., contact@krishiprakriti.com).
+    // Resend's free test address (onboarding@resend.dev) can only send to your own account email.
+
+    const { error: userError } = await resend.emails.send({
+      from: 'Krishi Prakriti <contact@yourdomain.com>',
+      to: [email],
       subject: 'We received your inquiry - Krishi Prakriti',
       text: [
         `Hi ${name},`,
@@ -57,6 +61,11 @@ export default async function handler(req, res) {
         `Team Krishi Prakriti`,
       ].join('\n'),
     });
+
+    if (userError) {
+      console.error('Confirmation email failed:', userError);
+    }
+    */
 
     return res.status(200).json({ success: true });
   } catch (error) {
